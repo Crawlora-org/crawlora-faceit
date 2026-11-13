@@ -1,0 +1,48 @@
+{
+  "name": "crawlora/faceit",
+  "description": "Crawlora FACEIT API client with 35 endpoints for leaderboards, players, teams, matches, tournaments, clips, hubs, and public game modes",
+  "keywords": [
+    "crawlora",
+    "api-client",
+    "sdk",
+    "web-scraping",
+    "scraping-api",
+    "faceit",
+    "faceit-api",
+    "faceit-scraper",
+    "faceit-data",
+    "faceit-leaderboards",
+    "faceit-players",
+    "faceit-teams",
+    "faceit-matches",
+    "faceit-tournaments",
+    "faceit-clips",
+    "faceit-hubs",
+    "faceit-public-game-modes"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": ">=8.1",
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Crawlora\\Faceit\\": "src/Crawlora/Faceit/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Crawlora\\Faceit\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "php tests/client_test.php"
+  },
+  "homepage": "https://crawlora.net/?utm_source=packagist&utm_medium=referral&utm_campaign=platform-clients&utm_content=faceit-php-homepage",
+  "support": {
+    "source": "https://github.com/Crawlora-org/crawlora-faceit",
+    "docs": "https://crawlora.net/docs?utm_source=packagist&utm_medium=referral&utm_campaign=platform-clients&utm_content=faceit-php-api-docs"
+  }
+}

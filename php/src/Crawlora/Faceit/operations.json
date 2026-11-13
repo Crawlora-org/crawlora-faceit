@@ -1,0 +1,2215 @@
+{
+  "platform": "faceit",
+  "operationCount": 35,
+  "operationIds": [
+    "faceit-ban-reasons",
+    "faceit-banlist",
+    "faceit-banlist-stats",
+    "faceit-best-clips",
+    "faceit-championship",
+    "faceit-championship-bracket",
+    "faceit-championship-participants",
+    "faceit-championship-search",
+    "faceit-clip",
+    "faceit-clips",
+    "faceit-competition-matches",
+    "faceit-fpl",
+    "faceit-game-modes",
+    "faceit-games",
+    "faceit-hub",
+    "faceit-hub-categories",
+    "faceit-hub-memberships",
+    "faceit-hubs",
+    "faceit-hubs-detailed",
+    "faceit-leaderboard",
+    "faceit-leaderboard-detail",
+    "faceit-leaderboard-statuses",
+    "faceit-maps",
+    "faceit-match-clips",
+    "faceit-organizer",
+    "faceit-player",
+    "faceit-player-rank",
+    "faceit-regions",
+    "faceit-rule",
+    "faceit-rules",
+    "faceit-skill-levels",
+    "faceit-standings",
+    "faceit-team",
+    "faceit-tournaments-past",
+    "faceit-user-skills"
+  ],
+  "methods": {
+    "ban_reasons": "faceit-ban-reasons",
+    "banlist": "faceit-banlist",
+    "banlist_stats": "faceit-banlist-stats",
+    "best_clips": "faceit-best-clips",
+    "championship": "faceit-championship",
+    "championship_bracket": "faceit-championship-bracket",
+    "championship_participants": "faceit-championship-participants",
+    "championship_search": "faceit-championship-search",
+    "clip": "faceit-clip",
+    "clips": "faceit-clips",
+    "competition_matches": "faceit-competition-matches",
+    "fpl": "faceit-fpl",
+    "game_modes": "faceit-game-modes",
+    "games": "faceit-games",
+    "hub": "faceit-hub",
+    "hub_categories": "faceit-hub-categories",
+    "hub_memberships": "faceit-hub-memberships",
+    "hubs": "faceit-hubs",
+    "hubs_detailed": "faceit-hubs-detailed",
+    "leaderboard": "faceit-leaderboard",
+    "leaderboard_detail": "faceit-leaderboard-detail",
+    "leaderboard_statuses": "faceit-leaderboard-statuses",
+    "maps": "faceit-maps",
+    "match_clips": "faceit-match-clips",
+    "organizer": "faceit-organizer",
+    "player": "faceit-player",
+    "player_rank": "faceit-player-rank",
+    "regions": "faceit-regions",
+    "rule": "faceit-rule",
+    "rules": "faceit-rules",
+    "skill_levels": "faceit-skill-levels",
+    "standings": "faceit-standings",
+    "team": "faceit-team",
+    "tournaments_past": "faceit-tournaments-past",
+    "user_skills": "faceit-user-skills"
+  },
+  "operations": {
+    "faceit-ban-reasons": {
+      "id": "faceit-ban-reasons",
+      "method": "GET",
+      "path": "/faceit/ban-reasons",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-banlist": {
+      "id": "faceit-banlist",
+      "method": "GET",
+      "path": "/faceit/banlist",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "size",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "reason",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Optional page size, 5-100; default 25.",
+          "in": "query",
+          "name": "size",
+          "type": "integer",
+          "x-example": 25
+        },
+        {
+          "description": "Optional opaque cursor copied from the previous response; omit for the first page.",
+          "in": "query",
+          "name": "cursor",
+          "type": "string"
+        },
+        {
+          "description": "Optional ban reason, one of: ban evasion, cheating, multiple accounts, platform abuse, smurfing, toxicity, playing on a smurf (see faceit-ban-reasons).",
+          "in": "query",
+          "name": "reason",
+          "type": "string",
+          "x-example": "toxicity"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-banlist-stats": {
+      "id": "faceit-banlist-stats",
+      "method": "GET",
+      "path": "/faceit/banlist-stats",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-best-clips": {
+      "id": "faceit-best-clips",
+      "method": "GET",
+      "path": "/faceit/best-clips",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "game",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "enum": [
+            "cs2"
+          ]
+        },
+        {
+          "name": "user_id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Game slug; only cs2 has Allstar clips.",
+          "enum": [
+            "cs2"
+          ],
+          "in": "query",
+          "name": "game",
+          "required": true,
+          "type": "string",
+          "x-example": "cs2"
+        },
+        {
+          "description": "FACEIT user UUID.",
+          "in": "query",
+          "name": "user_id",
+          "required": true,
+          "type": "string",
+          "x-example": "74df0e6b-5b41-42d7-93b4-05dc78b9a699"
+        },
+        {
+          "description": "Inclusive lower bound as an RFC3339 timestamp.",
+          "in": "query",
+          "name": "from",
+          "required": true,
+          "type": "string",
+          "x-example": "2026-01-01T00:00:00Z"
+        },
+        {
+          "description": "Inclusive upper bound as an RFC3339 timestamp.",
+          "in": "query",
+          "name": "to",
+          "required": true,
+          "type": "string",
+          "x-example": "2026-11-10T00:00:00Z"
+        },
+        {
+          "description": "Optional page size, 1-100; default 10.",
+          "in": "query",
+          "name": "limit",
+          "type": "integer",
+          "x-example": 10
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-championship": {
+      "id": "faceit-championship",
+      "method": "GET",
+      "path": "/faceit/championship",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Championship UUID from faceit-championship-search.",
+          "in": "query",
+          "name": "id",
+          "required": true,
+          "type": "string",
+          "x-example": "9888a3f4-e292-4c3a-a511-15d5d2fb112b"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-championship-bracket": {
+      "id": "faceit-championship-bracket",
+      "method": "GET",
+      "path": "/faceit/championship-bracket",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "group",
+          "in": "query",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "round",
+          "in": "query",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "start",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "end",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Championship UUID from faceit-championship-search.",
+          "in": "query",
+          "name": "id",
+          "required": true,
+          "type": "string",
+          "x-example": "9888a3f4-e292-4c3a-a511-15d5d2fb112b"
+        },
+        {
+          "description": "Group number.",
+          "in": "query",
+          "name": "group",
+          "required": true,
+          "type": "integer",
+          "x-example": 1
+        },
+        {
+          "description": "Round number.",
+          "in": "query",
+          "name": "round",
+          "required": true,
+          "type": "integer",
+          "x-example": 1
+        },
+        {
+          "description": "Optional non-negative start offset.",
+          "in": "query",
+          "name": "start",
+          "type": "integer",
+          "x-example": 0
+        },
+        {
+          "description": "Optional end offset.",
+          "in": "query",
+          "name": "end",
+          "type": "integer",
+          "x-example": 50
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-championship-participants": {
+      "id": "faceit-championship-participants",
+      "method": "GET",
+      "path": "/faceit/championship-participants",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "offset",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Championship UUID from faceit-championship-search.",
+          "in": "query",
+          "name": "id",
+          "required": true,
+          "type": "string",
+          "x-example": "9888a3f4-e292-4c3a-a511-15d5d2fb112b"
+        },
+        {
+          "description": "Optional page size, 1-50; default 20.",
+          "in": "query",
+          "name": "limit",
+          "type": "integer",
+          "x-example": 20
+        },
+        {
+          "description": "Optional non-negative row offset.",
+          "in": "query",
+          "name": "offset",
+          "type": "integer",
+          "x-example": 0
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-championship-search": {
+      "id": "faceit-championship-search",
+      "method": "GET",
+      "path": "/faceit/championship-search",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "entity_type",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "type",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "status",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "ONGOING",
+            "UPCOMING",
+            "FINISHED"
+          ]
+        },
+        {
+          "name": "subtype",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "country",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "game",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "cs2",
+            "csgo",
+            "ow2",
+            "valorant",
+            "pubg",
+            "tf2",
+            "krunker",
+            "pubgmobile",
+            "apex",
+            "fortnite",
+            "wow",
+            "brawl_stars",
+            "insidia",
+            "dota2",
+            "hearthstone",
+            "wildrift",
+            "clash_royale",
+            "smite",
+            "lol_NA",
+            "lol_EUW",
+            "lol_EUN",
+            "overwatch_EU",
+            "wot_EU",
+            "wot_RU",
+            "rainbow_6",
+            "csdz",
+            "battalion"
+          ]
+        },
+        {
+          "name": "has_drops",
+          "in": "query",
+          "type": "boolean"
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "offset",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Optional entity type; defaults to championship. Documented values: championship, hub, tournament, league, club, matchmaking.",
+          "in": "query",
+          "name": "entity_type",
+          "type": "string",
+          "x-example": "championship"
+        },
+        {
+          "description": "Optional leaderboard type; defaults to championship and normally equals entity_type.",
+          "in": "query",
+          "name": "type",
+          "type": "string",
+          "x-example": "championship"
+        },
+        {
+          "description": "Optional status, one of ONGOING, UPCOMING or FINISHED; defaults to ONGOING.",
+          "enum": [
+            "ONGOING",
+            "UPCOMING",
+            "FINISHED"
+          ],
+          "in": "query",
+          "name": "status",
+          "type": "string",
+          "x-example": "ONGOING"
+        },
+        {
+          "description": "Optional leaderboard subtype filter.",
+          "in": "query",
+          "name": "subtype",
+          "type": "string"
+        },
+        {
+          "description": "Optional two-letter ISO country code such as DE.",
+          "in": "query",
+          "name": "country",
+          "type": "string",
+          "x-example": "DE"
+        },
+        {
+          "description": "Optional game slug, one of the values returned by faceit-games.",
+          "enum": [
+            "cs2",
+            "csgo",
+            "ow2",
+            "valorant",
+            "pubg",
+            "tf2",
+            "krunker",
+            "pubgmobile",
+            "apex",
+            "fortnite",
+            "wow",
+            "brawl_stars",
+            "insidia",
+            "dota2",
+            "hearthstone",
+            "wildrift",
+            "clash_royale",
+            "smite",
+            "lol_NA",
+            "lol_EUW",
+            "lol_EUN",
+            "overwatch_EU",
+            "wot_EU",
+            "wot_RU",
+            "rainbow_6",
+            "csdz",
+            "battalion"
+          ],
+          "in": "query",
+          "name": "game",
+          "type": "string",
+          "x-example": "cs2,csgo,ow2,valorant,pubg,tf2,krunker,pubgmobile,apex,fortnite,wow,brawl_stars,insidia,dota2,hearthstone,wildrift,clash_royale,smite,lol_NA,lol_EUW,lol_EUN,overwatch_EU,wot_EU,wot_RU,rainbow_6,csdz,battalion"
+        },
+        {
+          "description": "Optional drops filter.",
+          "in": "query",
+          "name": "has_drops",
+          "type": "boolean",
+          "x-example": true
+        },
+        {
+          "description": "Optional page size, 1-100; default 25.",
+          "in": "query",
+          "name": "limit",
+          "type": "integer",
+          "x-example": 20
+        },
+        {
+          "description": "Optional non-negative row offset.",
+          "in": "query",
+          "name": "offset",
+          "type": "integer",
+          "x-example": 0
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-clip": {
+      "id": "faceit-clip",
+      "method": "GET",
+      "path": "/faceit/clip",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "24-character clip id from faceit-clips.",
+          "in": "query",
+          "name": "id",
+          "required": true,
+          "type": "string",
+          "x-example": "6a57e63f8d9a5a0549f503c8"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-clips": {
+      "id": "faceit-clips",
+      "method": "GET",
+      "path": "/faceit/clips",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "game",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "enum": [
+            "cs2"
+          ]
+        },
+        {
+          "name": "user_id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "offset",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Game slug; only cs2 has Allstar clips.",
+          "enum": [
+            "cs2"
+          ],
+          "in": "query",
+          "name": "game",
+          "required": true,
+          "type": "string",
+          "x-example": "cs2,csgo,ow2,valorant,pubg,tf2,krunker,pubgmobile,apex,fortnite,wow,brawl_stars,insidia,dota2,hearthstone,wildrift,clash_royale,smite,lol_NA,lol_EUW,lol_EUN,overwatch_EU,wot_EU,wot_RU,rainbow_6,csdz,battalion"
+        },
+        {
+          "description": "FACEIT user UUID.",
+          "in": "query",
+          "name": "user_id",
+          "required": true,
+          "type": "string",
+          "x-example": "74df0e6b-5b41-42d7-93b4-05dc78b9a699"
+        },
+        {
+          "description": "Optional page size, 1-100; default 10.",
+          "in": "query",
+          "name": "limit",
+          "type": "integer",
+          "x-example": 10
+        },
+        {
+          "description": "Optional non-negative row offset.",
+          "in": "query",
+          "name": "offset",
+          "type": "integer",
+          "x-example": 0
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-competition-matches": {
+      "id": "faceit-competition-matches",
+      "method": "GET",
+      "path": "/faceit/competition-matches",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "type",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "player_id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "size",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Competition id from faceit-championship-search.",
+          "in": "query",
+          "name": "id",
+          "required": true,
+          "type": "string",
+          "x-example": "9888a3f4-e292-4c3a-a511-15d5d2fb112b"
+        },
+        {
+          "description": "Competition type such as championship; the upstream rejects a missing type.",
+          "in": "query",
+          "name": "type",
+          "required": true,
+          "type": "string",
+          "x-example": "championship"
+        },
+        {
+          "description": "Optional player UUID filter.",
+          "in": "query",
+          "name": "player_id",
+          "type": "string",
+          "x-example": "74df0e6b-5b41-42d7-93b4-05dc78b9a699"
+        },
+        {
+          "description": "Optional non-negative page number; default 0.",
+          "in": "query",
+          "name": "page",
+          "type": "integer",
+          "x-example": 0
+        },
+        {
+          "description": "Optional page size, 1-100; default 20.",
+          "in": "query",
+          "name": "size",
+          "type": "integer",
+          "x-example": 20
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-fpl": {
+      "id": "faceit-fpl",
+      "method": "GET",
+      "path": "/faceit/fpl",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "game",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "cs2",
+            "csgo",
+            "ow2",
+            "valorant",
+            "pubg",
+            "tf2",
+            "krunker",
+            "pubgmobile",
+            "apex",
+            "fortnite",
+            "wow",
+            "brawl_stars",
+            "insidia",
+            "dota2",
+            "hearthstone",
+            "wildrift",
+            "clash_royale",
+            "smite",
+            "lol_NA",
+            "lol_EUW",
+            "lol_EUN",
+            "overwatch_EU",
+            "wot_EU",
+            "wot_RU",
+            "rainbow_6",
+            "csdz",
+            "battalion"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "offset",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Optional game slug, one of the values returned by faceit-games.",
+          "enum": [
+            "cs2",
+            "csgo",
+            "ow2",
+            "valorant",
+            "pubg",
+            "tf2",
+            "krunker",
+            "pubgmobile",
+            "apex",
+            "fortnite",
+            "wow",
+            "brawl_stars",
+            "insidia",
+            "dota2",
+            "hearthstone",
+            "wildrift",
+            "clash_royale",
+            "smite",
+            "lol_NA",
+            "lol_EUW",
+            "lol_EUN",
+            "overwatch_EU",
+            "wot_EU",
+            "wot_RU",
+            "rainbow_6",
+            "csdz",
+            "battalion"
+          ],
+          "in": "query",
+          "name": "game",
+          "type": "string",
+          "x-example": "cs2,csgo,ow2,valorant,pubg,tf2,krunker,pubgmobile,apex,fortnite,wow,brawl_stars,insidia,dota2,hearthstone,wildrift,clash_royale,smite,lol_NA,lol_EUW,lol_EUN,overwatch_EU,wot_EU,wot_RU,rainbow_6,csdz,battalion"
+        },
+        {
+          "description": "Optional page size, 1-100; default 20.",
+          "in": "query",
+          "name": "limit",
+          "type": "integer",
+          "x-example": 20
+        },
+        {
+          "description": "Optional non-negative row offset.",
+          "in": "query",
+          "name": "offset",
+          "type": "integer",
+          "x-example": 0
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-game-modes": {
+      "id": "faceit-game-modes",
+      "method": "GET",
+      "path": "/faceit/game-modes",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "game",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "enum": [
+            "cs2",
+            "csgo",
+            "ow2",
+            "valorant",
+            "pubg",
+            "tf2",
+            "krunker",
+            "pubgmobile",
+            "apex",
+            "fortnite",
+            "wow",
+            "brawl_stars",
+            "insidia",
+            "dota2",
+            "hearthstone",
+            "wildrift",
+            "clash_royale",
+            "smite",
+            "lol_NA",
+            "lol_EUW",
+            "lol_EUN",
+            "overwatch_EU",
+            "wot_EU",
+            "wot_RU",
+            "rainbow_6",
+            "csdz",
+            "battalion"
+          ]
+        },
+        {
+          "name": "region",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Game slug, one of the values returned by faceit-games.",
+          "enum": [
+            "cs2",
+            "csgo",
+            "ow2",
+            "valorant",
+            "pubg",
+            "tf2",
+            "krunker",
+            "pubgmobile",
+            "apex",
+            "fortnite",
+            "wow",
+            "brawl_stars",
+            "insidia",
+            "dota2",
+            "hearthstone",
+            "wildrift",
+            "clash_royale",
+            "smite",
+            "lol_NA",
+            "lol_EUW",
+            "lol_EUN",
+            "overwatch_EU",
+            "wot_EU",
+            "wot_RU",
+            "rainbow_6",
+            "csdz",
+            "battalion"
+          ],
+          "in": "query",
+          "name": "game",
+          "required": true,
+          "type": "string",
+          "x-example": "cs2,csgo,ow2,valorant,pubg,tf2,krunker,pubgmobile,apex,fortnite,wow,brawl_stars,insidia,dota2,hearthstone,wildrift,clash_royale,smite,lol_NA,lol_EUW,lol_EUN,overwatch_EU,wot_EU,wot_RU,rainbow_6,csdz,battalion"
+        },
+        {
+          "description": "Region code such as EU; see faceit-regions.",
+          "in": "query",
+          "name": "region",
+          "required": true,
+          "type": "string",
+          "x-example": "EU"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-games": {
+      "id": "faceit-games",
+      "method": "GET",
+      "path": "/faceit/games",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-hub": {
+      "id": "faceit-hub",
+      "method": "GET",
+      "path": "/faceit/hub",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Hub UUID from faceit-hub-memberships.",
+          "in": "query",
+          "name": "id",
+          "required": true,
+          "type": "string",
+          "x-example": "27ccb2d1-2715-4f65-be3f-c5de635fcd31"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-hub-categories": {
+      "id": "faceit-hub-categories",
+      "method": "GET",
+      "path": "/faceit/hub-categories",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-hub-memberships": {
+      "id": "faceit-hub-memberships",
+      "method": "GET",
+      "path": "/faceit/hub-memberships",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "user_id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "category",
+          "in": "query",
+          "type": "string",
+          "enum": [
+            "community",
+            "chat",
+            "ihl"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "offset",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "FACEIT user UUID.",
+          "in": "query",
+          "name": "user_id",
+          "required": true,
+          "type": "string",
+          "x-example": "74df0e6b-5b41-42d7-93b4-05dc78b9a699"
+        },
+        {
+          "description": "Optional hub category; one of community, chat or ihl.",
+          "enum": [
+            "community",
+            "chat",
+            "ihl"
+          ],
+          "in": "query",
+          "name": "category",
+          "type": "string",
+          "x-example": "community"
+        },
+        {
+          "description": "Optional page size, 1-50; default 20.",
+          "in": "query",
+          "name": "limit",
+          "type": "integer",
+          "x-example": 20
+        },
+        {
+          "description": "Optional non-negative row offset.",
+          "in": "query",
+          "name": "offset",
+          "type": "integer",
+          "x-example": 0
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-hubs": {
+      "id": "faceit-hubs",
+      "method": "GET",
+      "path": "/faceit/hubs",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "ids",
+          "in": "query",
+          "collectionFormat": "multi",
+          "type": "array",
+          "required": true
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "collectionFormat": "multi",
+          "description": "Hub UUIDs; repeat the parameter for up to 20 hubs.",
+          "in": "query",
+          "items": {
+            "type": "string"
+          },
+          "name": "ids",
+          "required": true,
+          "type": "array",
+          "x-example": "27ccb2d1-2715-4f65-be3f-c5de635fcd31"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-hubs-detailed": {
+      "id": "faceit-hubs-detailed",
+      "method": "GET",
+      "path": "/faceit/hubs-detailed",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "ids",
+          "in": "query",
+          "collectionFormat": "multi",
+          "type": "array",
+          "required": true
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "collectionFormat": "multi",
+          "description": "Hub UUIDs; repeat the parameter for up to 20 hubs.",
+          "in": "query",
+          "items": {
+            "type": "string"
+          },
+          "name": "ids",
+          "required": true,
+          "type": "array",
+          "x-example": "27ccb2d1-2715-4f65-be3f-c5de635fcd31"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-leaderboard": {
+      "id": "faceit-leaderboard",
+      "method": "GET",
+      "path": "/faceit/leaderboard",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "game",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "enum": [
+            "cs2",
+            "csgo",
+            "ow2",
+            "valorant",
+            "pubg",
+            "tf2",
+            "krunker",
+            "pubgmobile",
+            "apex",
+            "fortnite",
+            "wow",
+            "brawl_stars",
+            "insidia",
+            "dota2",
+            "hearthstone",
+            "wildrift",
+            "clash_royale",
+            "smite",
+            "lol_NA",
+            "lol_EUW",
+            "lol_EUN",
+            "overwatch_EU",
+            "wot_EU",
+            "wot_RU",
+            "rainbow_6",
+            "csdz",
+            "battalion"
+          ]
+        },
+        {
+          "name": "region",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "season",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "offset",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Game slug, one of the values returned by faceit-games.",
+          "enum": [
+            "cs2",
+            "csgo",
+            "ow2",
+            "valorant",
+            "pubg",
+            "tf2",
+            "krunker",
+            "pubgmobile",
+            "apex",
+            "fortnite",
+            "wow",
+            "brawl_stars",
+            "insidia",
+            "dota2",
+            "hearthstone",
+            "wildrift",
+            "clash_royale",
+            "smite",
+            "lol_NA",
+            "lol_EUW",
+            "lol_EUN",
+            "overwatch_EU",
+            "wot_EU",
+            "wot_RU",
+            "rainbow_6",
+            "csdz",
+            "battalion"
+          ],
+          "in": "query",
+          "name": "game",
+          "required": true,
+          "type": "string",
+          "x-example": "cs2,csgo,ow2,valorant,pubg,tf2,krunker,pubgmobile,apex,fortnite,wow,brawl_stars,insidia,dota2,hearthstone,wildrift,clash_royale,smite,lol_NA,lol_EUW,lol_EUN,overwatch_EU,wot_EU,wot_RU,rainbow_6,csdz,battalion"
+        },
+        {
+          "description": "Region code such as EU or NA; see faceit-regions.",
+          "in": "query",
+          "name": "region",
+          "required": true,
+          "type": "string",
+          "x-example": "EU"
+        },
+        {
+          "description": "Optional season number; when set the season-aware ranking is read.",
+          "in": "query",
+          "name": "season",
+          "type": "integer",
+          "x-example": 10
+        },
+        {
+          "description": "Optional page size, 1-100; default 20 and the gateway caps a page at 100 rows.",
+          "in": "query",
+          "name": "limit",
+          "type": "integer",
+          "x-example": 20
+        },
+        {
+          "description": "Optional non-negative row offset.",
+          "in": "query",
+          "name": "offset",
+          "type": "integer",
+          "x-example": 0
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-leaderboard-detail": {
+      "id": "faceit-leaderboard-detail",
+      "method": "GET",
+      "path": "/faceit/leaderboard-detail",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "24-character leaderboard id from faceit-championship-search or faceit-standings.",
+          "in": "query",
+          "name": "id",
+          "required": true,
+          "type": "string",
+          "x-example": "5b0d895ef2e59b000687c9ed"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-leaderboard-statuses": {
+      "id": "faceit-leaderboard-statuses",
+      "method": "GET",
+      "path": "/faceit/leaderboard-statuses",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-maps": {
+      "id": "faceit-maps",
+      "method": "GET",
+      "path": "/faceit/maps",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "game",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "enum": [
+            "cs2",
+            "csgo",
+            "ow2",
+            "valorant",
+            "pubg",
+            "tf2",
+            "krunker",
+            "pubgmobile",
+            "apex",
+            "fortnite",
+            "wow",
+            "brawl_stars",
+            "insidia",
+            "dota2",
+            "hearthstone",
+            "wildrift",
+            "clash_royale",
+            "smite",
+            "lol_NA",
+            "lol_EUW",
+            "lol_EUN",
+            "overwatch_EU",
+            "wot_EU",
+            "wot_RU",
+            "rainbow_6",
+            "csdz",
+            "battalion"
+          ]
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Game slug, one of the values returned by faceit-games.",
+          "enum": [
+            "cs2",
+            "csgo",
+            "ow2",
+            "valorant",
+            "pubg",
+            "tf2",
+            "krunker",
+            "pubgmobile",
+            "apex",
+            "fortnite",
+            "wow",
+            "brawl_stars",
+            "insidia",
+            "dota2",
+            "hearthstone",
+            "wildrift",
+            "clash_royale",
+            "smite",
+            "lol_NA",
+            "lol_EUW",
+            "lol_EUN",
+            "overwatch_EU",
+            "wot_EU",
+            "wot_RU",
+            "rainbow_6",
+            "csdz",
+            "battalion"
+          ],
+          "in": "query",
+          "name": "game",
+          "required": true,
+          "type": "string",
+          "x-example": "cs2,csgo,ow2,valorant,pubg,tf2,krunker,pubgmobile,apex,fortnite,wow,brawl_stars,insidia,dota2,hearthstone,wildrift,clash_royale,smite,lol_NA,lol_EUW,lol_EUN,overwatch_EU,wot_EU,wot_RU,rainbow_6,csdz,battalion"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-match-clips": {
+      "id": "faceit-match-clips",
+      "method": "GET",
+      "path": "/faceit/match-clips",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "game",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "enum": [
+            "cs2"
+          ]
+        },
+        {
+          "name": "match_id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "offset",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Game slug; only cs2 has Allstar clips.",
+          "enum": [
+            "cs2"
+          ],
+          "in": "query",
+          "name": "game",
+          "required": true,
+          "type": "string",
+          "x-example": "cs2"
+        },
+        {
+          "description": "Upstream match id from a clip row, for example 1-bef84e57-4ce3-41aa-b5e5-2918228c1c28.",
+          "in": "query",
+          "name": "match_id",
+          "required": true,
+          "type": "string",
+          "x-example": "1-bef84e57-4ce3-41aa-b5e5-2918228c1c28"
+        },
+        {
+          "description": "Optional page size, 1-100; default 10.",
+          "in": "query",
+          "name": "limit",
+          "type": "integer",
+          "x-example": 10
+        },
+        {
+          "description": "Optional non-negative row offset.",
+          "in": "query",
+          "name": "offset",
+          "type": "integer",
+          "x-example": 0
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-organizer": {
+      "id": "faceit-organizer",
+      "method": "GET",
+      "path": "/faceit/organizer",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Organizer UUID.",
+          "in": "query",
+          "name": "id",
+          "required": true,
+          "type": "string",
+          "x-example": "73d4185d-559f-4dbc-8398-9eae47adfe27"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-player": {
+      "id": "faceit-player",
+      "method": "GET",
+      "path": "/faceit/player",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "nickname",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "user_id",
+          "in": "query",
+          "type": "string"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Optional FACEIT nickname; exactly one of nickname and user_id is required.",
+          "in": "query",
+          "name": "nickname",
+          "type": "string",
+          "x-example": "dem0nnnnnnnn"
+        },
+        {
+          "description": "Optional FACEIT user UUID; exactly one of nickname and user_id is required.",
+          "in": "query",
+          "name": "user_id",
+          "type": "string",
+          "x-example": "74df0e6b-5b41-42d7-93b4-05dc78b9a699"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-player-rank": {
+      "id": "faceit-player-rank",
+      "method": "GET",
+      "path": "/faceit/player-rank",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "game",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "enum": [
+            "cs2",
+            "csgo",
+            "ow2",
+            "valorant",
+            "pubg",
+            "tf2",
+            "krunker",
+            "pubgmobile",
+            "apex",
+            "fortnite",
+            "wow",
+            "brawl_stars",
+            "insidia",
+            "dota2",
+            "hearthstone",
+            "wildrift",
+            "clash_royale",
+            "smite",
+            "lol_NA",
+            "lol_EUW",
+            "lol_EUN",
+            "overwatch_EU",
+            "wot_EU",
+            "wot_RU",
+            "rainbow_6",
+            "csdz",
+            "battalion"
+          ]
+        },
+        {
+          "name": "region",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "nickname",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "user_id",
+          "in": "query",
+          "type": "string"
+        },
+        {
+          "name": "season",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Game slug, one of the values returned by faceit-games.",
+          "enum": [
+            "cs2",
+            "csgo",
+            "ow2",
+            "valorant",
+            "pubg",
+            "tf2",
+            "krunker",
+            "pubgmobile",
+            "apex",
+            "fortnite",
+            "wow",
+            "brawl_stars",
+            "insidia",
+            "dota2",
+            "hearthstone",
+            "wildrift",
+            "clash_royale",
+            "smite",
+            "lol_NA",
+            "lol_EUW",
+            "lol_EUN",
+            "overwatch_EU",
+            "wot_EU",
+            "wot_RU",
+            "rainbow_6",
+            "csdz",
+            "battalion"
+          ],
+          "in": "query",
+          "name": "game",
+          "required": true,
+          "type": "string",
+          "x-example": "cs2,csgo,ow2,valorant,pubg,tf2,krunker,pubgmobile,apex,fortnite,wow,brawl_stars,insidia,dota2,hearthstone,wildrift,clash_royale,smite,lol_NA,lol_EUW,lol_EUN,overwatch_EU,wot_EU,wot_RU,rainbow_6,csdz,battalion"
+        },
+        {
+          "description": "Region code such as EU or NA; see faceit-regions for the documented values.",
+          "in": "query",
+          "name": "region",
+          "required": true,
+          "type": "string",
+          "x-example": "EU"
+        },
+        {
+          "description": "Optional FACEIT nickname; exactly one of nickname and user_id is required.",
+          "in": "query",
+          "name": "nickname",
+          "type": "string",
+          "x-example": "dem0nnnnnnnn"
+        },
+        {
+          "description": "Optional FACEIT user UUID; exactly one of nickname and user_id is required.",
+          "in": "query",
+          "name": "user_id",
+          "type": "string",
+          "x-example": "74df0e6b-5b41-42d7-93b4-05dc78b9a699"
+        },
+        {
+          "description": "Optional season number; when set the season-aware ranking is read.",
+          "in": "query",
+          "name": "season",
+          "type": "integer",
+          "x-example": 10
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-regions": {
+      "id": "faceit-regions",
+      "method": "GET",
+      "path": "/faceit/regions",
+      "pathParams": [],
+      "queryParams": [],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-rule": {
+      "id": "faceit-rule",
+      "method": "GET",
+      "path": "/faceit/rule",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Rule UUID from faceit-rules.",
+          "in": "query",
+          "name": "id",
+          "required": true,
+          "type": "string",
+          "x-example": "43e07c2c-c0b2-4872-9826-6812eba70463"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-rules": {
+      "id": "faceit-rules",
+      "method": "GET",
+      "path": "/faceit/rules",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "offset",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Optional page size, 1-100; default 20.",
+          "in": "query",
+          "name": "limit",
+          "type": "integer",
+          "x-example": 20
+        },
+        {
+          "description": "Optional non-negative row offset.",
+          "in": "query",
+          "name": "offset",
+          "type": "integer",
+          "x-example": 0
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-skill-levels": {
+      "id": "faceit-skill-levels",
+      "method": "GET",
+      "path": "/faceit/skill-levels",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "game",
+          "in": "query",
+          "type": "string",
+          "required": true,
+          "enum": [
+            "cs2",
+            "csgo",
+            "ow2",
+            "valorant",
+            "pubg",
+            "tf2",
+            "krunker",
+            "pubgmobile",
+            "apex",
+            "fortnite",
+            "wow",
+            "brawl_stars",
+            "insidia",
+            "dota2",
+            "hearthstone",
+            "wildrift",
+            "clash_royale",
+            "smite",
+            "lol_NA",
+            "lol_EUW",
+            "lol_EUN",
+            "overwatch_EU",
+            "wot_EU",
+            "wot_RU",
+            "rainbow_6",
+            "csdz",
+            "battalion"
+          ]
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Game slug, one of the values returned by faceit-games.",
+          "enum": [
+            "cs2",
+            "csgo",
+            "ow2",
+            "valorant",
+            "pubg",
+            "tf2",
+            "krunker",
+            "pubgmobile",
+            "apex",
+            "fortnite",
+            "wow",
+            "brawl_stars",
+            "insidia",
+            "dota2",
+            "hearthstone",
+            "wildrift",
+            "clash_royale",
+            "smite",
+            "lol_NA",
+            "lol_EUW",
+            "lol_EUN",
+            "overwatch_EU",
+            "wot_EU",
+            "wot_RU",
+            "rainbow_6",
+            "csdz",
+            "battalion"
+          ],
+          "in": "query",
+          "name": "game",
+          "required": true,
+          "type": "string",
+          "x-example": "cs2,csgo,ow2,valorant,pubg,tf2,krunker,pubgmobile,apex,fortnite,wow,brawl_stars,insidia,dota2,hearthstone,wildrift,clash_royale,smite,lol_NA,lol_EUW,lol_EUN,overwatch_EU,wot_EU,wot_RU,rainbow_6,csdz,battalion"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-standings": {
+      "id": "faceit-standings",
+      "method": "GET",
+      "path": "/faceit/standings",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "entity_id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "group",
+          "in": "query",
+          "type": "integer",
+          "required": true
+        },
+        {
+          "name": "round",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "segment",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "match",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Championship UUID from faceit-championship-search.",
+          "in": "query",
+          "name": "entity_id",
+          "required": true,
+          "type": "string",
+          "x-example": "9888a3f4-e292-4c3a-a511-15d5d2fb112b"
+        },
+        {
+          "description": "Group number.",
+          "in": "query",
+          "name": "group",
+          "required": true,
+          "type": "integer",
+          "x-example": 1
+        },
+        {
+          "description": "Round number, or a comma-separated list such as 1,2.",
+          "in": "query",
+          "name": "round",
+          "required": true,
+          "type": "string",
+          "x-example": "1"
+        },
+        {
+          "description": "Optional segment number; provide segment or match.",
+          "in": "query",
+          "name": "segment",
+          "type": "integer",
+          "x-example": 1
+        },
+        {
+          "description": "Optional match number; provide segment or match.",
+          "in": "query",
+          "name": "match",
+          "type": "integer",
+          "x-example": 1
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-team": {
+      "id": "faceit-team",
+      "method": "GET",
+      "path": "/faceit/team",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "id",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "Team UUID from a premade bracket faction id.",
+          "in": "query",
+          "name": "id",
+          "required": true,
+          "type": "string",
+          "x-example": "3279bf46-2cd3-43d1-b4d7-2dfd24d1d843"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-tournaments-past": {
+      "id": "faceit-tournaments-past",
+      "method": "GET",
+      "path": "/faceit/tournaments-past",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "nickname",
+          "in": "query",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "type": "integer"
+        },
+        {
+          "name": "offset",
+          "in": "query",
+          "type": "integer"
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "description": "FACEIT nickname.",
+          "in": "query",
+          "name": "nickname",
+          "required": true,
+          "type": "string",
+          "x-example": "dem0nnnnnnnn"
+        },
+        {
+          "description": "Optional page size, 1-100; default 20.",
+          "in": "query",
+          "name": "limit",
+          "type": "integer",
+          "x-example": 20
+        },
+        {
+          "description": "Optional non-negative row offset.",
+          "in": "query",
+          "name": "offset",
+          "type": "integer",
+          "x-example": 0
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    },
+    "faceit-user-skills": {
+      "id": "faceit-user-skills",
+      "method": "GET",
+      "path": "/faceit/user-skills",
+      "pathParams": [],
+      "queryParams": [
+        {
+          "name": "user_ids",
+          "in": "query",
+          "collectionFormat": "multi",
+          "type": "array",
+          "required": true
+        },
+        {
+          "name": "game",
+          "in": "query",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "bodyParam": null,
+      "bodyRequired": false,
+      "params": [
+        {
+          "collectionFormat": "multi",
+          "description": "Required FACEIT user UUIDs; repeat the parameter for up to 10 users.",
+          "in": "query",
+          "items": {
+            "type": "string"
+          },
+          "name": "user_ids",
+          "required": true,
+          "type": "array",
+          "x-example": "74df0e6b-5b41-42d7-93b4-05dc78b9a699"
+        },
+        {
+          "description": "Game slug, one of the values returned by faceit-games.",
+          "in": "query",
+          "name": "game",
+          "required": true,
+          "type": "string",
+          "x-example": "cs2,csgo,ow2,valorant,pubg,tf2,krunker,pubgmobile,apex,fortnite,wow,brawl_stars,insidia,dota2,hearthstone,wildrift,clash_royale,smite,lol_NA,lol_EUW,lol_EUN,overwatch_EU,wot_EU,wot_RU,rainbow_6,csdz,battalion"
+        }
+      ],
+      "produces": [
+        "application/json"
+      ],
+      "security": [
+        "ApiKeyAuth"
+      ]
+    }
+  }
+}

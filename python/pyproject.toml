@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crawlora-faceit"
+version = "0.1.0"
+description = "Crawlora FACEIT API client with 35 endpoints for leaderboards, players, teams, matches, tournaments, clips, hubs, and public game modes"
+readme = "README.md"
+keywords = ["crawlora", "api-client", "sdk", "web-scraping", "scraping-api", "faceit", "faceit-api", "faceit-scraper", "faceit-data", "faceit-leaderboards", "faceit-players", "faceit-teams", "faceit-matches", "faceit-tournaments", "faceit-clips", "faceit-hubs", "faceit-public-game-modes"]
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Crawlora" }]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Typing :: Typed",
+]
+dependencies = ["typing-extensions>=4.7; python_version < '3.11'"]
+
+[project.optional-dependencies]
+async = ["httpx>=0.27"]
+test = ["mypy>=1.11", "pytest>=8"]
+
+[project.urls]
+Homepage = "https://crawlora.net/?utm_source=pypi&utm_medium=referral&utm_campaign=platform-clients&utm_content=faceit-python-homepage"
+Documentation = "https://crawlora.net/docs?utm_source=pypi&utm_medium=referral&utm_campaign=platform-clients&utm_content=faceit-python-api-docs"
+Repository = "https://github.com/Crawlora-org/crawlora-faceit"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["crawlora_faceit"]
+
+[tool.setuptools.package-data]
+"crawlora_faceit" = ["py.typed", "*.pyi"]

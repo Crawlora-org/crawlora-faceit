@@ -1,0 +1,6348 @@
+{
+  "basePath": "/api/v1",
+  "definitions": {
+    "app.Response": {
+      "description": "The Response struct is used for wrapping the API response with a code, message, and data.",
+      "properties": {
+        "code": {
+          "description": "Code is the HTTP status code or a custom code used to indicate the result of the request\n@example 200",
+          "type": "integer"
+        },
+        "data": {
+          "description": "Data is the response data (can be any object or null)\n@example {\"id\": 1, \"name\": \"John Doe\"}"
+        },
+        "msg": {
+          "description": "Msg is the message that describes the result of the request\n@example \"Request successful\""
+        }
+      },
+      "type": "object"
+    },
+    "faceit.Ban": {
+      "properties": {
+        "avatar": {
+          "type": "string"
+        },
+        "country": {
+          "example": "pl",
+          "type": "string"
+        },
+        "duration_in_millis": {
+          "example": 2592000000,
+          "type": "integer"
+        },
+        "ends_at": {
+          "example": "2026-12-09T10:31:00Z",
+          "type": "string"
+        },
+        "id": {
+          "example": "6af1a0f50e490c15f7d4b702",
+          "type": "string"
+        },
+        "nickname": {
+          "example": "Sveg_3",
+          "type": "string"
+        },
+        "reason": {
+          "example": "toxicity",
+          "type": "string"
+        },
+        "starts_at": {
+          "example": "2026-11-09T10:31:00Z",
+          "type": "string"
+        },
+        "user_id": {
+          "example": "f7c7415f-8d32-463e-8aa4-25a6de2c9c02",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.BanReasonsResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "reasons": {
+          "example": [
+            "toxicity"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        },
+        "verified_at": {
+          "example": "2026-11-09",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.BanlistResponse": {
+      "properties": {
+        "bans": {
+          "items": {
+            "$ref": "#/definitions/faceit.Ban"
+          },
+          "type": "array"
+        },
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "cursor": {
+          "type": "string"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "size": {
+          "example": 25,
+          "type": "integer"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.BanlistStatsResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "last_12_months": {
+          "example": 283717,
+          "type": "integer"
+        },
+        "last_30_days": {
+          "example": 27701,
+          "type": "integer"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.BestClipsResponse": {
+      "properties": {
+        "clips": {
+          "items": {
+            "$ref": "#/definitions/faceit.Clip"
+          },
+          "type": "array"
+        },
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "from": {
+          "example": "2026-01-01T00:00:00Z",
+          "type": "string"
+        },
+        "game": {
+          "example": "cs2",
+          "type": "string"
+        },
+        "limit": {
+          "example": 10,
+          "type": "integer"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        },
+        "to": {
+          "example": "2026-11-10T00:00:00Z",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.Championship": {
+      "properties": {
+        "ac_required": {
+          "type": "boolean"
+        },
+        "admin_tool_enabled": {
+          "type": "boolean"
+        },
+        "archived": {
+          "type": "boolean"
+        },
+        "calculate_elo": {
+          "type": "boolean"
+        },
+        "championship_start": {
+          "type": "integer"
+        },
+        "checkin_clear": {
+          "type": "integer"
+        },
+        "checkin_enabled": {
+          "type": "boolean"
+        },
+        "checkin_start": {
+          "type": "integer"
+        },
+        "current_subscriptions": {
+          "type": "integer"
+        },
+        "featured": {
+          "type": "boolean"
+        },
+        "full": {
+          "type": "boolean"
+        },
+        "game": {
+          "type": "string"
+        },
+        "group_seeding_strategy": {
+          "type": "string"
+        },
+        "groups": {
+          "additionalProperties": {
+            "$ref": "#/definitions/faceit.ChampionshipGroup"
+          },
+          "type": "object"
+        },
+        "id": {
+          "type": "string"
+        },
+        "join_checks": {
+          "$ref": "#/definitions/faceit.ChampionshipJoinChecks"
+        },
+        "leaderboard_points": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "type": "object"
+        },
+        "match_configuration": {
+          "$ref": "#/definitions/faceit.ChampionshipMatchConfiguration"
+        },
+        "name": {
+          "type": "string"
+        },
+        "organizer": {
+          "$ref": "#/definitions/faceit.ChampionshipOrganizer"
+        },
+        "organizer_id": {
+          "type": "string"
+        },
+        "participants": {
+          "$ref": "#/definitions/faceit.ChampionshipParticipants"
+        },
+        "published": {
+          "type": "boolean"
+        },
+        "ranking_type": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "roles": {
+          "items": {
+            "$ref": "#/definitions/faceit.ChampionshipRole"
+          },
+          "type": "array"
+        },
+        "round_seeding_strategy": {
+          "type": "string"
+        },
+        "schedule": {
+          "additionalProperties": {
+            "$ref": "#/definitions/faceit.ChampionshipSchedule"
+          },
+          "type": "object"
+        },
+        "slots": {
+          "type": "integer"
+        },
+        "status": {
+          "type": "string"
+        },
+        "subscription_end": {
+          "type": "integer"
+        },
+        "subscription_start": {
+          "type": "integer"
+        },
+        "subscriptions_locked": {
+          "type": "boolean"
+        },
+        "substitution": {
+          "$ref": "#/definitions/faceit.ChampionshipSubstitution"
+        },
+        "total_groups": {
+          "type": "integer"
+        },
+        "total_rounds": {
+          "type": "integer"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.ChampionshipBracketGroup": {
+      "properties": {
+        "championship_id": {
+          "type": "string"
+        },
+        "delimiter": {
+          "type": "integer"
+        },
+        "group": {
+          "type": "integer"
+        },
+        "matches": {
+          "items": {
+            "$ref": "#/definitions/faceit.ChampionshipBracketMatch"
+          },
+          "type": "array"
+        },
+        "number": {
+          "type": "integer"
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.ChampionshipBracketMatch": {
+      "properties": {
+        "bracket_placement": {
+          "type": "integer"
+        },
+        "factions": {
+          "items": {
+            "$ref": "#/definitions/faceit.ChampionshipFaction"
+          },
+          "type": "array"
+        },
+        "status": {
+          "type": "string"
+        },
+        "total_factions": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.ChampionshipBracketResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "end": {
+          "example": 1,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/definitions/faceit.ChampionshipBracketGroup"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        },
+        "start": {
+          "example": 0,
+          "type": "integer"
+        },
+        "total": {
+          "example": 1,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.ChampionshipFaction": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "number": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.ChampionshipGroup": {
+      "properties": {
+        "capacity": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.ChampionshipJoinChecks": {
+      "properties": {
+        "allowed_team_types": {
+          "example": [
+            "user"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "blacklist_geo_countries": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "join_policy": {
+          "example": "public",
+          "type": "string"
+        },
+        "max_skill_level": {
+          "example": 10,
+          "type": "integer"
+        },
+        "min_skill_level": {
+          "example": 1,
+          "type": "integer"
+        },
+        "whitelist_geo_countries": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.ChampionshipMatchConfiguration": {
+      "properties": {
+        "best_of": {
+          "type": "integer"
+        },
+        "elo_type": {
+          "type": "string"
+        },
+        "game": {
+          "type": "string"
+        },
+        "game_type": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "label_en": {
+          "type": "string"
+        },
+        "max_players": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "team_size": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.ChampionshipMember": {
+      "properties": {
+        "championship": {
+          "$ref": "#/definitions/faceit.ChampionshipMemberEvent"
+        },
+        "championship_status": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "roles": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "user": {
+          "$ref": "#/definitions/faceit.ChampionshipMemberUser"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.ChampionshipMemberEvent": {
+      "properties": {
+        "game": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "organizer_id": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.ChampionshipMemberUser": {
+      "properties": {
+        "avatar_url": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "games": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "id": {
+          "type": "string"
+        },
+        "nickname": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.ChampionshipOrganizer": {
+      "properties": {
+        "features": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "name": {
+          "example": "Extreme Competitions",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.ChampionshipParticipants": {
+      "properties": {
+        "total": {
+          "type": "integer"
+        },
+        "with_reserved_slot": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.ChampionshipParticipantsResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "end": {
+          "example": 20,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/definitions/faceit.ChampionshipMember"
+          },
+          "type": "array"
+        },
+        "limit": {
+          "example": 20,
+          "type": "integer"
+        },
+        "offset": {
+          "example": 0,
+          "type": "integer"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        },
+        "start": {
+          "example": 0,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.ChampionshipResponse": {
+      "properties": {
+        "championship": {
+          "$ref": "#/definitions/faceit.Championship"
+        },
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.ChampionshipRole": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.ChampionshipSchedule": {
+      "properties": {
+        "date": {
+          "type": "integer"
+        },
+        "status": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.ChampionshipSearchResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/definitions/faceit.Leaderboard"
+          },
+          "type": "array"
+        },
+        "limit": {
+          "example": 20,
+          "type": "integer"
+        },
+        "offset": {
+          "example": 0,
+          "type": "integer"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.ChampionshipSubstitution": {
+      "properties": {
+        "max_substitutes": {
+          "type": "integer"
+        },
+        "max_substitutions": {
+          "type": "integer"
+        },
+        "substitution_time": {
+          "type": "integer"
+        },
+        "substitutions_per_round_enabled": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.Clip": {
+      "properties": {
+        "created_at": {
+          "example": "2026-07-15T19:57:51.637Z",
+          "type": "string"
+        },
+        "demo": {
+          "example": "1-bef84e57-4ce3-41aa-b5e5-2918228c1c28-1-1.dem.zst",
+          "type": "string"
+        },
+        "faceit_round": {
+          "example": 1,
+          "type": "integer"
+        },
+        "id": {
+          "example": "6a57e63f8d9a5a0549f503c8",
+          "type": "string"
+        },
+        "map": {
+          "example": "Dust 2",
+          "type": "string"
+        },
+        "match_id": {
+          "example": "1-bef84e57-4ce3-41aa-b5e5-2918228c1c28",
+          "type": "string"
+        },
+        "match_instance_id": {
+          "example": "1-bef84e57-4ce3-41aa-b5e5-2918228c1c28-1-1",
+          "type": "string"
+        },
+        "reason": {
+          "example": "premium",
+          "type": "string"
+        },
+        "round": {
+          "example": 15,
+          "type": "integer"
+        },
+        "status": {
+          "example": "CLIP_STATUS_PROCESSED",
+          "type": "string"
+        },
+        "thumbnail_url": {
+          "type": "string"
+        },
+        "title": {
+          "example": "Dust 2 AK-47 1V5 Clutch",
+          "type": "string"
+        },
+        "updated_at": {
+          "example": "2026-07-15T20:00:48.827Z",
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "user_id": {
+          "example": "74df0e6b-5b41-42d7-93b4-05dc78b9a699",
+          "type": "string"
+        },
+        "views": {
+          "example": "893",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.ClipResponse": {
+      "properties": {
+        "clip": {
+          "$ref": "#/definitions/faceit.Clip"
+        },
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.ClipsResponse": {
+      "properties": {
+        "clips": {
+          "items": {
+            "$ref": "#/definitions/faceit.Clip"
+          },
+          "type": "array"
+        },
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "has_more": {
+          "example": true,
+          "type": "boolean"
+        },
+        "limit": {
+          "example": 10,
+          "type": "integer"
+        },
+        "offset": {
+          "example": 0,
+          "type": "integer"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.CompetitionMatchesResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "matches": {
+          "items": {},
+          "type": "array"
+        },
+        "page": {
+          "example": 0,
+          "type": "integer"
+        },
+        "size": {
+          "example": 20,
+          "type": "integer"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.FPLCircuit": {
+      "properties": {
+        "default": {
+          "example": false,
+          "type": "boolean"
+        },
+        "game": {
+          "example": "cs2",
+          "type": "string"
+        },
+        "id": {
+          "example": "67444abee4404b6b2c55f15e",
+          "type": "string"
+        },
+        "name": {
+          "example": "FPL Middle East",
+          "type": "string"
+        },
+        "ranking_source": {
+          "$ref": "#/definitions/faceit.FPLRankingSource"
+        },
+        "region": {
+          "example": "EU",
+          "type": "string"
+        },
+        "seasons": {
+          "items": {
+            "$ref": "#/definitions/faceit.FPLSeason"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.FPLRankingSource": {
+      "properties": {
+        "source": {
+          "example": "fpl",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.FPLResponse": {
+      "properties": {
+        "circuits": {
+          "items": {
+            "$ref": "#/definitions/faceit.FPLCircuit"
+          },
+          "type": "array"
+        },
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "has_more": {
+          "example": false,
+          "type": "boolean"
+        },
+        "limit": {
+          "example": 20,
+          "type": "integer"
+        },
+        "offset": {
+          "example": 0,
+          "type": "integer"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.FPLSeason": {
+      "properties": {
+        "ended_at": {
+          "type": "string"
+        },
+        "number": {
+          "example": 7,
+          "type": "integer"
+        },
+        "started_at": {
+          "example": "2025-12-12T16:51:35.196Z",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.Game": {
+      "properties": {
+        "clips": {
+          "example": true,
+          "type": "boolean"
+        },
+        "leaderboard_verified": {
+          "example": true,
+          "type": "boolean"
+        },
+        "map_configuration": {
+          "example": true,
+          "type": "boolean"
+        },
+        "slug": {
+          "example": "cs2",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.GameMap": {
+      "properties": {
+        "class_name": {
+          "example": "de_dust2",
+          "type": "string"
+        },
+        "game_map_id": {
+          "example": "de_dust2",
+          "type": "string"
+        },
+        "guid": {
+          "example": "de_dust2",
+          "type": "string"
+        },
+        "image_lg": {
+          "type": "string"
+        },
+        "image_sm": {
+          "type": "string"
+        },
+        "name": {
+          "example": "Dust2",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.GameMode": {
+      "properties": {
+        "group_id": {
+          "example": "ad8f1821-bfbf-42c4-b351-6fbde91dba46",
+          "type": "string"
+        },
+        "id": {
+          "example": "8bf954ec-30ce-4483-8694-7a2d305f9071",
+          "type": "string"
+        },
+        "label": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "spectators": {
+          "example": false,
+          "type": "boolean"
+        },
+        "team_size": {
+          "example": 2,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.GameModesResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "game": {
+          "example": "cs2",
+          "type": "string"
+        },
+        "modes": {
+          "items": {
+            "$ref": "#/definitions/faceit.GameMode"
+          },
+          "type": "array"
+        },
+        "region": {
+          "example": "EU",
+          "type": "string"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.GameSkill": {
+      "properties": {
+        "latest_delta": {
+          "example": 31,
+          "type": "integer"
+        },
+        "level": {
+          "example": 10,
+          "type": "integer"
+        },
+        "ranked_match_count": {
+          "example": 5081,
+          "type": "integer"
+        },
+        "value": {
+          "example": 5342,
+          "type": "integer"
+        },
+        "win_streak": {
+          "example": 1,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.GamesResponse": {
+      "properties": {
+        "complete": {
+          "example": false,
+          "type": "boolean"
+        },
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "games": {
+          "items": {
+            "$ref": "#/definitions/faceit.Game"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        },
+        "verified_at": {
+          "example": "2026-11-09",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.Hub": {
+      "properties": {
+        "admin_tool_enabled": {
+          "type": "boolean"
+        },
+        "application_configuration": {
+          "$ref": "#/definitions/faceit.HubApplicationSettings"
+        },
+        "archived": {
+          "type": "boolean"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "chat_settings": {
+          "$ref": "#/definitions/faceit.HubChatSettings"
+        },
+        "check_game": {
+          "type": "boolean"
+        },
+        "check_geo_location": {
+          "type": "boolean"
+        },
+        "check_region": {
+          "type": "boolean"
+        },
+        "child_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "children": {
+          "items": {
+            "$ref": "#/definitions/faceit.HubChild"
+          },
+          "type": "array"
+        },
+        "clash_slots_available": {
+          "type": "boolean"
+        },
+        "club": {
+          "type": "boolean"
+        },
+        "cover_image": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "current_players_joined": {
+          "type": "integer"
+        },
+        "custom_prizes_count": {
+          "type": "integer"
+        },
+        "description": {
+          "type": "string"
+        },
+        "faceit_points_equivalent_total": {
+          "type": "integer"
+        },
+        "faceit_points_total": {
+          "type": "integer"
+        },
+        "featured": {
+          "type": "boolean"
+        },
+        "game": {
+          "type": "string"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "join_permissions": {
+          "type": "string"
+        },
+        "max_skill_level": {
+          "type": "integer"
+        },
+        "min_skill_level": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "organizer_guid": {
+          "type": "string"
+        },
+        "organizer_name": {
+          "type": "string"
+        },
+        "published": {
+          "type": "boolean"
+        },
+        "region": {
+          "type": "string"
+        },
+        "relationship_type": {
+          "type": "string"
+        },
+        "roles": {
+          "items": {
+            "$ref": "#/definitions/faceit.HubRole"
+          },
+          "type": "array"
+        },
+        "rules_guid": {
+          "type": "string"
+        },
+        "selection_settings": {
+          "$ref": "#/definitions/faceit.HubSelectionSettings"
+        },
+        "sensitive": {
+          "type": "boolean"
+        },
+        "slots": {
+          "type": "integer"
+        },
+        "supporter_badge_image": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.HubApplicationSettings": {
+      "properties": {
+        "applicant_input_required": {
+          "type": "boolean"
+        },
+        "applications_enabled": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.HubCategoriesResponse": {
+      "properties": {
+        "categories": {
+          "example": [
+            "community"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        },
+        "verified_at": {
+          "example": "2026-11-09",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.HubChatSettings": {
+      "properties": {
+        "join_announcements": {
+          "type": "boolean"
+        },
+        "subscription_announcements": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.HubChild": {
+      "properties": {
+        "category": {
+          "type": "string"
+        },
+        "current_players_joined": {
+          "type": "integer"
+        },
+        "game": {
+          "type": "string"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "parent_id": {
+          "type": "string"
+        },
+        "published": {
+          "type": "boolean"
+        },
+        "region": {
+          "type": "string"
+        },
+        "relationship_type": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.HubCompetition": {
+      "properties": {
+        "announcement": {
+          "type": "string"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "child_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "current_players_joined": {
+          "type": "integer"
+        },
+        "custom_prizes_count": {
+          "type": "integer"
+        },
+        "game": {
+          "type": "string"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "join_permissions": {
+          "type": "string"
+        },
+        "max_skill_level": {
+          "type": "integer"
+        },
+        "min_skill_level": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "organizer_name": {
+          "type": "string"
+        },
+        "published": {
+          "type": "boolean"
+        },
+        "whitelist_geo_countries": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.HubDetailed": {
+      "properties": {
+        "admin_tool_enabled": {
+          "type": "boolean"
+        },
+        "application_configuration": {
+          "$ref": "#/definitions/faceit.HubApplicationSettings"
+        },
+        "archived": {
+          "type": "boolean"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "chat_settings": {
+          "$ref": "#/definitions/faceit.HubChatSettings"
+        },
+        "check_game": {
+          "type": "boolean"
+        },
+        "check_geo_location": {
+          "type": "boolean"
+        },
+        "check_region": {
+          "type": "boolean"
+        },
+        "child_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "clash_slots_available": {
+          "type": "boolean"
+        },
+        "club": {
+          "type": "boolean"
+        },
+        "cover_image": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "current_players_joined": {
+          "type": "integer"
+        },
+        "custom_prizes_count": {
+          "type": "integer"
+        },
+        "description": {
+          "type": "string"
+        },
+        "faceit_points_equivalent_total": {
+          "type": "integer"
+        },
+        "faceit_points_total": {
+          "type": "integer"
+        },
+        "featured": {
+          "type": "boolean"
+        },
+        "game": {
+          "type": "string"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "join_permissions": {
+          "type": "string"
+        },
+        "max_skill_level": {
+          "type": "integer"
+        },
+        "min_skill_level": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "organizer_guid": {
+          "type": "string"
+        },
+        "owner": {
+          "$ref": "#/definitions/faceit.HubOwner"
+        },
+        "published": {
+          "type": "boolean"
+        },
+        "region": {
+          "type": "string"
+        },
+        "relationship_type": {
+          "type": "string"
+        },
+        "roles": {
+          "items": {
+            "$ref": "#/definitions/faceit.HubRole"
+          },
+          "type": "array"
+        },
+        "rules_guid": {
+          "type": "string"
+        },
+        "selection_settings": {
+          "$ref": "#/definitions/faceit.HubSelectionSettings"
+        },
+        "sensitive": {
+          "type": "boolean"
+        },
+        "slots": {
+          "type": "integer"
+        },
+        "supporter_badge_image": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.HubMemberUser": {
+      "properties": {
+        "avatar_url": {
+          "type": "string"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "nickname": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.HubMembership": {
+      "properties": {
+        "competition": {
+          "$ref": "#/definitions/faceit.HubCompetition"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "highest_role_ranking": {
+          "type": "integer"
+        },
+        "membership_id": {
+          "type": "string"
+        },
+        "roles": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "user": {
+          "$ref": "#/definitions/faceit.HubMemberUser"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.HubMembershipsResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "end": {
+          "example": 20,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/definitions/faceit.HubMembership"
+          },
+          "type": "array"
+        },
+        "limit": {
+          "example": 20,
+          "type": "integer"
+        },
+        "offset": {
+          "example": 0,
+          "type": "integer"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        },
+        "start": {
+          "example": 0,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.HubOwner": {
+      "properties": {
+        "avatar_url": {
+          "type": "string"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "nickname": {
+          "example": "Stark",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.HubResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "hub": {
+          "$ref": "#/definitions/faceit.Hub"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.HubRole": {
+      "properties": {
+        "color": {
+          "type": "string"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "ranking": {
+          "type": "integer"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.HubSelectionSettings": {
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.HubSummary": {
+      "properties": {
+        "avatar": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "child_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "club": {
+          "type": "boolean"
+        },
+        "current_players_joined": {
+          "type": "integer"
+        },
+        "game": {
+          "type": "string"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "organizer_guid": {
+          "type": "string"
+        },
+        "organizer_tier": {
+          "type": "integer"
+        },
+        "published": {
+          "type": "boolean"
+        },
+        "region": {
+          "type": "string"
+        },
+        "relationship_type": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.HubsDetailedResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/definitions/faceit.HubDetailed"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.HubsResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/definitions/faceit.HubSummary"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.Leaderboard": {
+      "properties": {
+        "bracket_placement": {
+          "type": "integer"
+        },
+        "bye_team_result_action": {
+          "type": "string"
+        },
+        "conclusion_criteria": {
+          "type": "string"
+        },
+        "country_restriction": {
+          "type": "string"
+        },
+        "delimiter": {
+          "type": "integer"
+        },
+        "drops_information": {},
+        "end_date": {
+          "type": "string"
+        },
+        "entity_id": {
+          "type": "string"
+        },
+        "entity_type": {
+          "type": "string"
+        },
+        "ffa_points": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "type": "object"
+        },
+        "game": {
+          "type": "string"
+        },
+        "group": {
+          "type": "integer"
+        },
+        "hidden": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        },
+        "leaderboard_mode": {
+          "type": "string"
+        },
+        "leaderboard_name": {
+          "type": "string"
+        },
+        "leaderboard_type": {
+          "type": "string"
+        },
+        "min_matches": {
+          "type": "integer"
+        },
+        "organizer_id": {
+          "type": "string"
+        },
+        "points_per_draw": {
+          "type": "integer"
+        },
+        "points_per_loss": {
+          "type": "integer"
+        },
+        "points_per_win": {
+          "type": "integer"
+        },
+        "points_type": {
+          "type": "string"
+        },
+        "prize_pool": {},
+        "prizes": {},
+        "ranking_type": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "round": {
+          "type": "integer"
+        },
+        "rules": {},
+        "schedule": {
+          "type": "string"
+        },
+        "season": {
+          "type": "integer"
+        },
+        "start_date": {
+          "type": "string"
+        },
+        "starting_points": {
+          "type": "integer"
+        },
+        "status": {
+          "type": "string"
+        },
+        "technical_name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.LeaderboardDetail": {
+      "properties": {
+        "balanced_scoring": {},
+        "bracket_placement": {
+          "type": "integer"
+        },
+        "bye_team_result_action": {
+          "type": "string"
+        },
+        "conclusion_criteria": {
+          "type": "string"
+        },
+        "country_restriction": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "delimiter": {
+          "type": "integer"
+        },
+        "drops_information": {},
+        "end_date": {
+          "type": "string"
+        },
+        "entities": {
+          "items": {
+            "$ref": "#/definitions/faceit.LeaderboardEntityRef"
+          },
+          "type": "array"
+        },
+        "entity_id": {
+          "type": "string"
+        },
+        "entity_type": {
+          "type": "string"
+        },
+        "ffa_points": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "type": "object"
+        },
+        "game": {
+          "type": "string"
+        },
+        "group": {
+          "type": "integer"
+        },
+        "hidden": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        },
+        "last_modified": {
+          "type": "string"
+        },
+        "leaderboard_mode": {
+          "type": "string"
+        },
+        "leaderboard_name": {
+          "type": "string"
+        },
+        "leaderboard_type": {
+          "type": "string"
+        },
+        "membership_requirement": {},
+        "metadata": {},
+        "min_matches": {
+          "type": "integer"
+        },
+        "notify_points_updates": {
+          "type": "boolean"
+        },
+        "organizer_id": {
+          "type": "string"
+        },
+        "penalty": {},
+        "points_per": {},
+        "points_per_draw": {
+          "type": "integer"
+        },
+        "points_per_loss": {
+          "type": "integer"
+        },
+        "points_per_win": {
+          "type": "integer"
+        },
+        "points_type": {
+          "type": "string"
+        },
+        "prize_pool": {},
+        "prizes": {},
+        "promotion_target": {},
+        "ranking_boost": {
+          "type": "integer"
+        },
+        "ranking_fields": {},
+        "ranking_type": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "relegation_target": {},
+        "requirement": {},
+        "round": {
+          "type": "integer"
+        },
+        "rules": {},
+        "schedule": {
+          "type": "string"
+        },
+        "season": {
+          "type": "integer"
+        },
+        "start_date": {
+          "type": "string"
+        },
+        "starting_points": {
+          "type": "integer"
+        },
+        "status": {
+          "type": "string"
+        },
+        "subtype": {},
+        "tag_requirement": {},
+        "technical_name": {
+          "type": "string"
+        },
+        "version": {
+          "example": 1,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.LeaderboardDetailResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "leaderboard": {
+          "$ref": "#/definitions/faceit.LeaderboardDetail"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.LeaderboardEntityRef": {
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "example": "championship",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.LeaderboardResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "entries": {
+          "items": {
+            "$ref": "#/definitions/faceit.RankingEntry"
+          },
+          "type": "array"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "game": {
+          "example": "cs2",
+          "type": "string"
+        },
+        "limit": {
+          "example": 20,
+          "type": "integer"
+        },
+        "offset": {
+          "example": 0,
+          "type": "integer"
+        },
+        "region": {
+          "example": "EU",
+          "type": "string"
+        },
+        "season": {
+          "example": 10,
+          "type": "integer"
+        },
+        "season_history": {
+          "items": {
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.LeaderboardStatusesResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "entity_types": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        },
+        "statuses": {
+          "example": [
+            "ONGOING"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "types": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "verified_at": {
+          "example": "2026-11-09",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.MapsResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "game": {
+          "example": "cs2",
+          "type": "string"
+        },
+        "maps": {
+          "items": {
+            "$ref": "#/definitions/faceit.GameMap"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.MatchClipsResponse": {
+      "properties": {
+        "clips": {
+          "items": {
+            "$ref": "#/definitions/faceit.Clip"
+          },
+          "type": "array"
+        },
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "has_more": {
+          "example": true,
+          "type": "boolean"
+        },
+        "limit": {
+          "example": 10,
+          "type": "integer"
+        },
+        "offset": {
+          "example": 0,
+          "type": "integer"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.Organizer": {
+      "properties": {
+        "admin_list_public": {
+          "type": "boolean"
+        },
+        "admins": {
+          "items": {
+            "$ref": "#/definitions/faceit.OrganizerAdmin"
+          },
+          "type": "array"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "countries": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "cover": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "donations_enabled": {
+          "type": "boolean"
+        },
+        "facebook": {
+          "type": "string"
+        },
+        "featured": {
+          "type": "boolean"
+        },
+        "features": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "featuring_countries": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "freemium_hub_enabled": {
+          "type": "boolean"
+        },
+        "games": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "geo_regions": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "live_streaming_enabled": {
+          "type": "boolean"
+        },
+        "name": {
+          "example": "Extreme Competitions",
+          "type": "string"
+        },
+        "published": {
+          "type": "boolean"
+        },
+        "sponsors": {
+          "items": {
+            "$ref": "#/definitions/faceit.OrganizerSponsor"
+          },
+          "type": "array"
+        },
+        "tier": {
+          "$ref": "#/definitions/faceit.OrganizerTier"
+        },
+        "twitch": {
+          "type": "string"
+        },
+        "twitter": {
+          "type": "string"
+        },
+        "type": {
+          "example": "organization",
+          "type": "string"
+        },
+        "website": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.OrganizerAdmin": {
+      "properties": {
+        "avatar_url": {
+          "type": "string"
+        },
+        "nickname": {
+          "example": "Sabin_3",
+          "type": "string"
+        },
+        "role": {
+          "example": "owner",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.OrganizerResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "organizer": {
+          "$ref": "#/definitions/faceit.Organizer"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.OrganizerSponsor": {
+      "properties": {
+        "guid": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "name": {
+          "example": "SPONSOR",
+          "type": "string"
+        },
+        "priority": {
+          "type": "integer"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.OrganizerTier": {
+      "properties": {
+        "allowed_concurrent_competitions": {
+          "example": 10,
+          "type": "integer"
+        },
+        "allowed_concurrent_hubs": {
+          "example": 15,
+          "type": "integer"
+        },
+        "custom_prizes_enabled": {
+          "type": "boolean"
+        },
+        "faceit_points_prizes_enabled": {
+          "type": "boolean"
+        },
+        "level": {
+          "example": 80,
+          "type": "integer"
+        },
+        "max_competition_slots": {
+          "example": 128,
+          "type": "integer"
+        },
+        "max_rules": {
+          "example": 40,
+          "type": "integer"
+        },
+        "min_competition_slots": {
+          "example": 2,
+          "type": "integer"
+        },
+        "prize_money_settings_enabled": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.Player": {
+      "properties": {
+        "activated_at": {
+          "example": "2018-12-11T13:16:39.327Z",
+          "type": "string"
+        },
+        "active_team_id": {
+          "example": "dff3a43b-a069-4a8c-a23a-a32bb0624730",
+          "type": "string"
+        },
+        "avatar": {
+          "example": "https://distribution.faceit-cdn.net/images/af16c75c-407e-4b43-96e6-badf2646c806.jpeg",
+          "type": "string"
+        },
+        "country": {
+          "example": "is",
+          "type": "string"
+        },
+        "cover_image_url": {
+          "example": "https://distribution.faceit-cdn.net/images/2af7644d-e74d-4022-aab9-709e54cf918f.jpeg",
+          "type": "string"
+        },
+        "created_at": {
+          "example": "2018-12-11T13:16:39.327Z",
+          "type": "string"
+        },
+        "flag": {
+          "example": "cs2",
+          "type": "string"
+        },
+        "games": {
+          "additionalProperties": {
+            "$ref": "#/definitions/faceit.PlayerGame"
+          },
+          "type": "object"
+        },
+        "id": {
+          "example": "74df0e6b-5b41-42d7-93b4-05dc78b9a699",
+          "type": "string"
+        },
+        "matching_sound": {
+          "example": "default",
+          "type": "string"
+        },
+        "memberships": {
+          "example": [
+            "free"
+          ],
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "nickname": {
+          "example": "dem0nnnnnnnn",
+          "type": "string"
+        },
+        "registration_status": {
+          "example": "active",
+          "type": "string"
+        },
+        "registration_status_v2": {
+          "example": "ACTIVE",
+          "type": "string"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "timezone": {
+          "example": "Atlantic/Reykjavik",
+          "type": "string"
+        },
+        "user_type": {
+          "example": "normal",
+          "type": "string"
+        },
+        "verified": {
+          "example": true,
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.PlayerGame": {
+      "properties": {
+        "elo_refreshed_by_user_at": {
+          "example": "2026-11-08T09:00:00.000Z",
+          "type": "string"
+        },
+        "faceit_elo": {
+          "example": 5342,
+          "type": "integer"
+        },
+        "game_id": {
+          "example": "cs2",
+          "type": "string"
+        },
+        "game_name": {
+          "example": "Counter-Strike 2",
+          "type": "string"
+        },
+        "region": {
+          "example": "EU",
+          "type": "string"
+        },
+        "region_updated_at": {
+          "example": "2026-11-08T09:00:00.000Z",
+          "type": "string"
+        },
+        "region_updated_at_v2": {
+          "example": "2026-11-08T09:00:00.000Z",
+          "type": "string"
+        },
+        "skill_level": {
+          "example": 10,
+          "type": "integer"
+        },
+        "skill_level_label": {
+          "example": "Level 10",
+          "type": "string"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.PlayerRankResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "game": {
+          "example": "cs2",
+          "type": "string"
+        },
+        "position": {
+          "example": 1,
+          "type": "integer"
+        },
+        "region": {
+          "example": "EU",
+          "type": "string"
+        },
+        "season": {
+          "example": 10,
+          "type": "integer"
+        },
+        "season_history": {
+          "items": {
+            "type": "integer"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        },
+        "user_id": {
+          "example": "74df0e6b-5b41-42d7-93b4-05dc78b9a699",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.PlayerResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "player": {
+          "$ref": "#/definitions/faceit.Player"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.RankingEntry": {
+      "properties": {
+        "elo": {
+          "example": 5342,
+          "type": "integer"
+        },
+        "global_position": {
+          "example": 1,
+          "type": "integer"
+        },
+        "position": {
+          "example": 1,
+          "type": "integer"
+        },
+        "skill_level": {
+          "example": 10,
+          "type": "integer"
+        },
+        "user": {
+          "$ref": "#/definitions/faceit.RankingUser"
+        },
+        "verification_level": {
+          "example": 0,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.RankingUser": {
+      "properties": {
+        "country": {
+          "example": "is",
+          "type": "string"
+        },
+        "id": {
+          "example": "74df0e6b-5b41-42d7-93b4-05dc78b9a699",
+          "type": "string"
+        },
+        "nickname": {
+          "example": "dem0nnnnnnnn",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.Region": {
+      "properties": {
+        "code": {
+          "example": "EU",
+          "type": "string"
+        },
+        "excluded": {
+          "example": false,
+          "type": "boolean"
+        },
+        "source": {
+          "example": "client_geo_region",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.RegionsResponse": {
+      "properties": {
+        "closed": {
+          "example": false,
+          "type": "boolean"
+        },
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "regions": {
+          "items": {
+            "$ref": "#/definitions/faceit.Region"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        },
+        "verified_at": {
+          "example": "2026-11-09",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.Rule": {
+      "properties": {
+        "body": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "game": {
+          "example": "cs2",
+          "type": "string"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "name": {
+          "example": "November 2026 — Neon Rider Duo",
+          "type": "string"
+        },
+        "organizer": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.RuleResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "rule": {
+          "$ref": "#/definitions/faceit.Rule"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.RulesResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "limit": {
+          "example": 20,
+          "type": "integer"
+        },
+        "offset": {
+          "example": 0,
+          "type": "integer"
+        },
+        "rules": {
+          "items": {
+            "$ref": "#/definitions/faceit.Rule"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.SkillLevel": {
+      "properties": {
+        "max": {
+          "example": 500,
+          "type": "integer"
+        },
+        "min": {
+          "example": 100,
+          "type": "integer"
+        },
+        "skill_level": {
+          "example": 1,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.SkillLevelsResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "game": {
+          "example": "cs2",
+          "type": "string"
+        },
+        "levels": {
+          "items": {
+            "$ref": "#/definitions/faceit.SkillLevel"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.StandingsEntry": {
+      "properties": {
+        "leaderboard": {
+          "$ref": "#/definitions/faceit.StandingsLeaderboard"
+        },
+        "rankings": {
+          "items": {
+            "$ref": "#/definitions/faceit.StandingsRanking"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.StandingsLeaderboard": {
+      "properties": {
+        "bracket_placement": {
+          "type": "integer"
+        },
+        "delimiter": {
+          "type": "integer"
+        },
+        "entity_id": {
+          "type": "string"
+        },
+        "entity_type": {
+          "type": "string"
+        },
+        "group": {
+          "type": "integer"
+        },
+        "id": {
+          "type": "string"
+        },
+        "round": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.StandingsPlacement": {
+      "properties": {
+        "entity_avatar": {
+          "type": "string"
+        },
+        "entity_country": {
+          "example": "gb",
+          "type": "string"
+        },
+        "entity_id": {
+          "type": "string"
+        },
+        "entity_memberships": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "entity_name": {
+          "example": "SabinSabin",
+          "type": "string"
+        },
+        "entity_skill_level": {
+          "example": 2,
+          "type": "integer"
+        },
+        "entity_verified": {
+          "type": "boolean"
+        },
+        "entity_verified_level": {
+          "type": "string"
+        },
+        "roster_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "roster_memberships": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "type": {
+          "example": "solo",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.StandingsRanking": {
+      "properties": {
+        "placement": {
+          "$ref": "#/definitions/faceit.StandingsPlacement"
+        },
+        "played": {
+          "example": 0,
+          "type": "integer"
+        },
+        "points": {
+          "example": 0,
+          "type": "integer"
+        },
+        "position": {
+          "example": 1,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.StandingsResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "entries": {
+          "items": {
+            "$ref": "#/definitions/faceit.StandingsEntry"
+          },
+          "type": "array"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "group": {
+          "example": 1,
+          "type": "integer"
+        },
+        "round": {
+          "example": "1",
+          "type": "string"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.Team": {
+      "properties": {
+        "avatar": {
+          "type": "string"
+        },
+        "country": {
+          "example": "de",
+          "type": "string"
+        },
+        "cover": {
+          "type": "string"
+        },
+        "created_at": {
+          "example": "Fri Sep 29 09:25:59 UTC 2023",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "entity_type": {
+          "example": "team",
+          "type": "string"
+        },
+        "facebook": {
+          "type": "string"
+        },
+        "game": {
+          "example": "cs2",
+          "type": "string"
+        },
+        "guid": {
+          "type": "string"
+        },
+        "leader": {
+          "example": "2c207775-bdac-493a-a80e-f556c5e58a76",
+          "type": "string"
+        },
+        "members": {
+          "items": {
+            "$ref": "#/definitions/faceit.TeamMember"
+          },
+          "type": "array"
+        },
+        "members_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "name": {
+          "example": "teamKR eSport Club",
+          "type": "string"
+        },
+        "nickname": {
+          "example": "TKR-",
+          "type": "string"
+        },
+        "pending_members_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "status": {
+          "example": "PERMANENT",
+          "type": "string"
+        },
+        "team_type": {
+          "example": "premade",
+          "type": "string"
+        },
+        "twitter": {
+          "type": "string"
+        },
+        "updated_at": {
+          "type": "string"
+        },
+        "website": {
+          "type": "string"
+        },
+        "youtube": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.TeamMember": {
+      "properties": {
+        "avatar": {
+          "type": "string"
+        },
+        "country": {
+          "example": "de",
+          "type": "string"
+        },
+        "games": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "guid": {
+          "example": "b0963d5e-1c81-4f04-91c4-5b4f3922cfab",
+          "type": "string"
+        },
+        "nickname": {
+          "example": "ShaZ1337",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.TeamResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        },
+        "team": {
+          "$ref": "#/definitions/faceit.Team"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.TournamentsPastResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "limit": {
+          "example": 20,
+          "type": "integer"
+        },
+        "offset": {
+          "example": 0,
+          "type": "integer"
+        },
+        "result": {
+          "example": "ok",
+          "type": "string"
+        },
+        "size": {
+          "example": 0,
+          "type": "integer"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        },
+        "tournaments": {
+          "items": {},
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.UserSkill": {
+      "properties": {
+        "expiration": {
+          "example": "2026-11-17T01:55:45.017480113Z",
+          "type": "string"
+        },
+        "game_skill": {
+          "$ref": "#/definitions/faceit.GameSkill"
+        },
+        "is_professional_player": {
+          "example": true,
+          "type": "boolean"
+        },
+        "user_id": {
+          "example": "74df0e6b-5b41-42d7-93b4-05dc78b9a699",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "faceit.UserSkillsResponse": {
+      "properties": {
+        "count": {
+          "example": 2,
+          "type": "integer"
+        },
+        "fetched_at": {
+          "example": "2026-11-09T11:30:00Z",
+          "type": "string"
+        },
+        "game": {
+          "example": "cs2",
+          "type": "string"
+        },
+        "skills": {
+          "items": {
+            "$ref": "#/definitions/faceit.UserSkill"
+          },
+          "type": "array"
+        },
+        "source_url": {
+          "example": "https://api.faceit.com/ranking/v1/globalranking/cs2/EU?limit=20",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "host": "api.crawlora.net",
+  "info": {
+    "contact": {
+      "email": "support@crawlora.net",
+      "name": "API Support",
+      "url": "https://crawlora.net"
+    },
+    "description": "Crawlora is a hosted web-data and SERP API: call documented REST endpoints and get normalized JSON instead of HTML to parse — across search/SERP, maps and local, e-commerce, app stores, social, media and finance. One API key; Crawlora runs the proxy rotation, headless browsers and parsing behind the scenes. Billed pay-on-success: charged only on a successful 2xx response, 1-10 credits per call, with a free tier of 2,000 credits per month and no card. A hosted MCP server (mcp.crawlora.net/mcp) exposes the same catalog as agent tools. Search endpoints accept `q` as a universal alias for whichever search-term parameter they document (`query`, `term`, `keyword`, or Amazon's `k`), so one parameter name works across the whole catalog; an explicitly supplied documented name always wins.",
+    "license": {
+      "name": "Crawlora Terms of Service",
+      "url": "https://crawlora.net/terms"
+    },
+    "termsOfService": "https://crawlora.net/terms",
+    "title": "Crawlora API",
+    "version": "1.2",
+    "x-logo": {
+      "altText": "Crawlora",
+      "backgroundColor": "#FFFFFF",
+      "url": "https://raw.githubusercontent.com/Crawlora-org/crawlora-mcp/main/assets/logo-400x400.png"
+    }
+  },
+  "paths": {
+    "/faceit/ban-reasons": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the closed ban-reason enum the ban-list filter accepts. The upstream names these values in its own validation error, so they are server-validated. Pass one as the reason parameter of faceit-banlist to filter the ban list.",
+        "operationId": "faceit-ban-reasons",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.BanReasonsResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT ban reason enum",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/banlist": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one page of the public FACEIT ban list: ban id, banned user id and nickname, avatar, country, reason, start and end timestamps and duration. Paging uses the upstream's size parameter (5-100, default 25) and the opaque cursor returned with the previous page; pass it back to advance. A cursor from the upstream is echoed in the response.",
+        "operationId": "faceit-banlist",
+        "parameters": [
+          {
+            "description": "Optional page size, 5-100; default 25.",
+            "in": "query",
+            "name": "size",
+            "type": "integer",
+            "x-example": 25
+          },
+          {
+            "description": "Optional opaque cursor copied from the previous response; omit for the first page.",
+            "in": "query",
+            "name": "cursor",
+            "type": "string"
+          },
+          {
+            "description": "Optional ban reason, one of: ban evasion, cheating, multiple accounts, platform abuse, smurfing, toxicity, playing on a smurf (see faceit-ban-reasons).",
+            "in": "query",
+            "name": "reason",
+            "type": "string",
+            "x-example": "toxicity"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.BanlistResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT public ban list page",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/banlist-stats": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the aggregate FACEIT ban counters: bans in the last 12 months and bans in the last 30 days. The upstream publishes no per-reason or per-game breakdown on this anonymous surface.",
+        "operationId": "faceit-banlist-stats",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.BanlistStatsResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT ban list aggregate counters",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/best-clips": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns a player's best Allstar clips inside an inclusive time window: the same clip row shape as faceit-clips, ordered by the upstream best-clip ranking. Both from and to are required RFC3339 timestamps. Only cs2 has Allstar clips; a window with no clips is a valid empty list. The upstream ignores offset on this route, so no offset parameter is exposed.",
+        "operationId": "faceit-best-clips",
+        "parameters": [
+          {
+            "description": "Game slug; only cs2 has Allstar clips.",
+            "enum": [
+              "cs2"
+            ],
+            "in": "query",
+            "name": "game",
+            "required": true,
+            "type": "string",
+            "x-example": "cs2"
+          },
+          {
+            "description": "FACEIT user UUID.",
+            "in": "query",
+            "name": "user_id",
+            "required": true,
+            "type": "string",
+            "x-example": "74df0e6b-5b41-42d7-93b4-05dc78b9a699"
+          },
+          {
+            "description": "Inclusive lower bound as an RFC3339 timestamp.",
+            "in": "query",
+            "name": "from",
+            "required": true,
+            "type": "string",
+            "x-example": "2026-01-01T00:00:00Z"
+          },
+          {
+            "description": "Inclusive upper bound as an RFC3339 timestamp.",
+            "in": "query",
+            "name": "to",
+            "required": true,
+            "type": "string",
+            "x-example": "2026-11-10T00:00:00Z"
+          },
+          {
+            "description": "Optional page size, 1-100; default 10.",
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "x-example": 10
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.BestClipsResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT player best clips in a time window",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/championship": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one FACEIT championship: identity and organizer, status and type, region, slots and participant counts, subscription/check-in/start timestamps (epoch milliseconds), entry checks, substitution policy, normalized match settings, schedule and groups, the organizer's FFA leaderboard points and role names. Championship ids are discovered through faceit-championship-search. An unknown id answers 404.",
+        "operationId": "faceit-championship",
+        "parameters": [
+          {
+            "description": "Championship UUID from faceit-championship-search.",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "9888a3f4-e292-4c3a-a511-15d5d2fb112b"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.ChampionshipResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT championship detail by id",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/championship-bracket": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one group and round of a championship bracket: group number, delimiter, status, total and the bracket match pairings with each side's player id and faction number. The group and round parameters are required by the upstream; start and end bound the returned match range. An unknown championship answers 404.",
+        "operationId": "faceit-championship-bracket",
+        "parameters": [
+          {
+            "description": "Championship UUID from faceit-championship-search.",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "9888a3f4-e292-4c3a-a511-15d5d2fb112b"
+          },
+          {
+            "description": "Group number.",
+            "in": "query",
+            "name": "group",
+            "required": true,
+            "type": "integer",
+            "x-example": 1
+          },
+          {
+            "description": "Round number.",
+            "in": "query",
+            "name": "round",
+            "required": true,
+            "type": "integer",
+            "x-example": 1
+          },
+          {
+            "description": "Optional non-negative start offset.",
+            "in": "query",
+            "name": "start",
+            "type": "integer",
+            "x-example": 0
+          },
+          {
+            "description": "Optional end offset.",
+            "in": "query",
+            "name": "end",
+            "type": "integer",
+            "x-example": 50
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.ChampionshipBracketResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT championship group bracket by group and round",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/championship-participants": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one page of a championship's participants: membership id, player identity (id, nickname, avatar, country and game list), the championship reference, role names and the participant's championship status. The upstream caps the page size at 50. Paging uses limit and offset, and the response echoes the upstream start and end markers.",
+        "operationId": "faceit-championship-participants",
+        "parameters": [
+          {
+            "description": "Championship UUID from faceit-championship-search.",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "9888a3f4-e292-4c3a-a511-15d5d2fb112b"
+          },
+          {
+            "description": "Optional page size, 1-50; default 20.",
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "x-example": 20
+          },
+          {
+            "description": "Optional non-negative row offset.",
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "x-example": 0
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.ChampionshipParticipantsResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT championship participants page",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/championship-search": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns leaderboard discovery rows, which are the anonymous way to discover championship ids: leaderboard identity, entity id/type, game and region, season, group/round/bracket placement, ranking type, scoring fields, dates, status and prize metadata. Defaults to ongoing championships. status is a closed enum (see faceit-leaderboard-statuses); entity_type and type are forwarded as filters and are not server-validated. The upstream caps a page at 100 rows.",
+        "operationId": "faceit-championship-search",
+        "parameters": [
+          {
+            "description": "Optional entity type; defaults to championship. Documented values: championship, hub, tournament, league, club, matchmaking.",
+            "in": "query",
+            "name": "entity_type",
+            "type": "string",
+            "x-example": "championship"
+          },
+          {
+            "description": "Optional leaderboard type; defaults to championship and normally equals entity_type.",
+            "in": "query",
+            "name": "type",
+            "type": "string",
+            "x-example": "championship"
+          },
+          {
+            "description": "Optional status, one of ONGOING, UPCOMING or FINISHED; defaults to ONGOING.",
+            "enum": [
+              "ONGOING",
+              "UPCOMING",
+              "FINISHED"
+            ],
+            "in": "query",
+            "name": "status",
+            "type": "string",
+            "x-example": "ONGOING"
+          },
+          {
+            "description": "Optional leaderboard subtype filter.",
+            "in": "query",
+            "name": "subtype",
+            "type": "string"
+          },
+          {
+            "description": "Optional two-letter ISO country code such as DE.",
+            "in": "query",
+            "name": "country",
+            "type": "string",
+            "x-example": "DE"
+          },
+          {
+            "description": "Optional game slug, one of the values returned by faceit-games.",
+            "enum": [
+              "cs2",
+              "csgo",
+              "ow2",
+              "valorant",
+              "pubg",
+              "tf2",
+              "krunker",
+              "pubgmobile",
+              "apex",
+              "fortnite",
+              "wow",
+              "brawl_stars",
+              "insidia",
+              "dota2",
+              "hearthstone",
+              "wildrift",
+              "clash_royale",
+              "smite",
+              "lol_NA",
+              "lol_EUW",
+              "lol_EUN",
+              "overwatch_EU",
+              "wot_EU",
+              "wot_RU",
+              "rainbow_6",
+              "csdz",
+              "battalion"
+            ],
+            "in": "query",
+            "name": "game",
+            "type": "string",
+            "x-example": "cs2,csgo,ow2,valorant,pubg,tf2,krunker,pubgmobile,apex,fortnite,wow,brawl_stars,insidia,dota2,hearthstone,wildrift,clash_royale,smite,lol_NA,lol_EUW,lol_EUN,overwatch_EU,wot_EU,wot_RU,rainbow_6,csdz,battalion"
+          },
+          {
+            "description": "Optional drops filter.",
+            "in": "query",
+            "name": "has_drops",
+            "type": "boolean",
+            "x-example": true
+          },
+          {
+            "description": "Optional page size, 1-100; default 25.",
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "x-example": 20
+          },
+          {
+            "description": "Optional non-negative row offset.",
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "x-example": 0
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.ChampionshipSearchResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "Discover FACEIT championships and leaderboards",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/clip": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one Allstar clip by id: title, view count, embed URL, thumbnail, linked FACEIT match id and match instance, processing status, demo filename, clip reason, map and round. Clip ids come from faceit-clips. An unknown id answers 404.",
+        "operationId": "faceit-clip",
+        "parameters": [
+          {
+            "description": "24-character clip id from faceit-clips.",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "6a57e63f8d9a5a0549f503c8"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.ClipResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT Allstar clip detail",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/clips": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one page of a player's Allstar clips: clip id, title, view count, embed URL, thumbnail, linked FACEIT match id and match instance, processing status, map, round and creation/update timestamps. Only the cs2 game has Allstar clips; every other game is rejected by the upstream as unknown. Paging uses limit and offset and the response reports has_more. An unknown player is a valid empty page.",
+        "operationId": "faceit-clips",
+        "parameters": [
+          {
+            "description": "Game slug; only cs2 has Allstar clips.",
+            "enum": [
+              "cs2"
+            ],
+            "in": "query",
+            "name": "game",
+            "required": true,
+            "type": "string",
+            "x-example": "cs2,csgo,ow2,valorant,pubg,tf2,krunker,pubgmobile,apex,fortnite,wow,brawl_stars,insidia,dota2,hearthstone,wildrift,clash_royale,smite,lol_NA,lol_EUW,lol_EUN,overwatch_EU,wot_EU,wot_RU,rainbow_6,csdz,battalion"
+          },
+          {
+            "description": "FACEIT user UUID.",
+            "in": "query",
+            "name": "user_id",
+            "required": true,
+            "type": "string",
+            "x-example": "74df0e6b-5b41-42d7-93b4-05dc78b9a699"
+          },
+          {
+            "description": "Optional page size, 1-100; default 10.",
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "x-example": 10
+          },
+          {
+            "description": "Optional non-negative row offset.",
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "x-example": 0
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.ClipsResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT player Allstar clips",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/competition-matches": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one page of a competition's match list for a competition id and type. The upstream requires both id and type and rejects a missing type; an unknown id is an empty list. The sampled anonymous response was empty and its non-empty item shape is unverified, so each match is passed through as raw upstream JSON rather than a guessed DTO.",
+        "operationId": "faceit-competition-matches",
+        "parameters": [
+          {
+            "description": "Competition id from faceit-championship-search.",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "9888a3f4-e292-4c3a-a511-15d5d2fb112b"
+          },
+          {
+            "description": "Competition type such as championship; the upstream rejects a missing type.",
+            "in": "query",
+            "name": "type",
+            "required": true,
+            "type": "string",
+            "x-example": "championship"
+          },
+          {
+            "description": "Optional player UUID filter.",
+            "in": "query",
+            "name": "player_id",
+            "type": "string",
+            "x-example": "74df0e6b-5b41-42d7-93b4-05dc78b9a699"
+          },
+          {
+            "description": "Optional non-negative page number; default 0.",
+            "in": "query",
+            "name": "page",
+            "type": "integer",
+            "x-example": 0
+          },
+          {
+            "description": "Optional page size, 1-100; default 20.",
+            "in": "query",
+            "name": "size",
+            "type": "integer",
+            "x-example": 20
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.CompetitionMatchesResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT competition match list",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/fpl": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns FPL (FACEIT Pro League) circuits, optionally filtered to one game: circuit id, game and region, display name, default flag, season windows with start and end timestamps, and the configured ranking source. An unknown game is a valid empty list. Paging uses limit and offset and the response reports has_more.",
+        "operationId": "faceit-fpl",
+        "parameters": [
+          {
+            "description": "Optional game slug, one of the values returned by faceit-games.",
+            "enum": [
+              "cs2",
+              "csgo",
+              "ow2",
+              "valorant",
+              "pubg",
+              "tf2",
+              "krunker",
+              "pubgmobile",
+              "apex",
+              "fortnite",
+              "wow",
+              "brawl_stars",
+              "insidia",
+              "dota2",
+              "hearthstone",
+              "wildrift",
+              "clash_royale",
+              "smite",
+              "lol_NA",
+              "lol_EUW",
+              "lol_EUN",
+              "overwatch_EU",
+              "wot_EU",
+              "wot_RU",
+              "rainbow_6",
+              "csdz",
+              "battalion"
+            ],
+            "in": "query",
+            "name": "game",
+            "type": "string",
+            "x-example": "cs2,csgo,ow2,valorant,pubg,tf2,krunker,pubgmobile,apex,fortnite,wow,brawl_stars,insidia,dota2,hearthstone,wildrift,clash_royale,smite,lol_NA,lol_EUW,lol_EUN,overwatch_EU,wot_EU,wot_RU,rainbow_6,csdz,battalion"
+          },
+          {
+            "description": "Optional page size, 1-100; default 20.",
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "x-example": 20
+          },
+          {
+            "description": "Optional non-negative row offset.",
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "x-example": 0
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.FPLResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT Pro League circuits",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/game-modes": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the public matchmaking queues for a game and region: queue id, queue group id, localized label, spectator flag and team size. Both game and region are required by the upstream. A pair with no queues is a valid empty list, not an error.",
+        "operationId": "faceit-game-modes",
+        "parameters": [
+          {
+            "description": "Game slug, one of the values returned by faceit-games.",
+            "enum": [
+              "cs2",
+              "csgo",
+              "ow2",
+              "valorant",
+              "pubg",
+              "tf2",
+              "krunker",
+              "pubgmobile",
+              "apex",
+              "fortnite",
+              "wow",
+              "brawl_stars",
+              "insidia",
+              "dota2",
+              "hearthstone",
+              "wildrift",
+              "clash_royale",
+              "smite",
+              "lol_NA",
+              "lol_EUW",
+              "lol_EUN",
+              "overwatch_EU",
+              "wot_EU",
+              "wot_RU",
+              "rainbow_6",
+              "csdz",
+              "battalion"
+            ],
+            "in": "query",
+            "name": "game",
+            "required": true,
+            "type": "string",
+            "x-example": "cs2,csgo,ow2,valorant,pubg,tf2,krunker,pubgmobile,apex,fortnite,wow,brawl_stars,insidia,dota2,hearthstone,wildrift,clash_royale,smite,lol_NA,lol_EUW,lol_EUN,overwatch_EU,wot_EU,wot_RU,rainbow_6,csdz,battalion"
+          },
+          {
+            "description": "Region code such as EU; see faceit-regions.",
+            "in": "query",
+            "name": "region",
+            "required": true,
+            "type": "string",
+            "x-example": "EU"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.GameModesResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT public queues for a game and region",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/games": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the pinned game taxonomy: the slugs whose map configuration answered with real maps on the verification date. The upstream exposes no anonymous games catalogue, so this list is pinned and marked not complete rather than being a claimed complete catalogue. Every other FACEIT route validates its game parameter against this set.",
+        "operationId": "faceit-games",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.GamesResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT game slugs confirmed by the live map oracle",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/hub": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one FACEIT hub: identity, description, game/region/category, organizer, publication and featured flags, slot and player counts, skill band, join permissions, rules id, images, geo/region/game checks, nested child hubs, role identities, FACEIT points, prize counts and queue/application/chat settings. An unknown id answers 404.",
+        "operationId": "faceit-hub",
+        "parameters": [
+          {
+            "description": "Hub UUID from faceit-hub-memberships.",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "27ccb2d1-2715-4f65-be3f-c5de635fcd31"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.HubResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT hub detail by id",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/hub-categories": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the closed hub category enum the hub membership endpoint accepts. The upstream names these values in its own validation error, so they are server-validated.",
+        "operationId": "faceit-hub-categories",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.HubCategoriesResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT hub category enum",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/hub-memberships": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one page of a user's hub and competition memberships: membership id, user identity, the competition/hub reference (game, category, skill band, join permissions, player count, child ids), role names, highest role ranking and join date. This is the only anonymous hub-discovery path the FACEIT website exposes, so hub ids for faceit-hub come from here. category is a closed enum.",
+        "operationId": "faceit-hub-memberships",
+        "parameters": [
+          {
+            "description": "FACEIT user UUID.",
+            "in": "query",
+            "name": "user_id",
+            "required": true,
+            "type": "string",
+            "x-example": "74df0e6b-5b41-42d7-93b4-05dc78b9a699"
+          },
+          {
+            "description": "Optional hub category; one of community, chat or ihl.",
+            "enum": [
+              "community",
+              "chat",
+              "ihl"
+            ],
+            "in": "query",
+            "name": "category",
+            "type": "string",
+            "x-example": "community"
+          },
+          {
+            "description": "Optional page size, 1-50; default 20.",
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "x-example": 20
+          },
+          {
+            "description": "Optional non-negative row offset.",
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "x-example": 0
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.HubMembershipsResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT user hub memberships",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/hubs": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns summary rows for up to 20 hub ids supplied as a repeated ids parameter: hub id, game and region, name, organizer, avatar, player count, category, publication state, relationship type, child ids and organizer tier. An unknown id is simply omitted from the item list. Hub ids come from faceit-hub-memberships.",
+        "operationId": "faceit-hubs",
+        "parameters": [
+          {
+            "collectionFormat": "multi",
+            "description": "Hub UUIDs; repeat the parameter for up to 20 hubs.",
+            "in": "query",
+            "items": {
+              "type": "string"
+            },
+            "name": "ids",
+            "required": true,
+            "type": "array",
+            "x-example": "27ccb2d1-2715-4f65-be3f-c5de635fcd31"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.HubsResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT hubs by id",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/hubs-detailed": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns full hub objects for up to 20 hub ids through the v2 bulk read: identity, description, game/region/category, organizer and owner, publication flags, slot and player counts, skill band, join permissions, rules id, images, checks, child ids, role identities, points and queue/application/chat settings. Unlike faceit-hubs (summaries) and faceit-hub (one id), this resolves several full hubs in one call. An unknown id is omitted from the item list.",
+        "operationId": "faceit-hubs-detailed",
+        "parameters": [
+          {
+            "collectionFormat": "multi",
+            "description": "Hub UUIDs; repeat the parameter for up to 20 hubs.",
+            "in": "query",
+            "items": {
+              "type": "string"
+            },
+            "name": "ids",
+            "required": true,
+            "type": "array",
+            "x-example": "27ccb2d1-2715-4f65-be3f-c5de635fcd31"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.HubsDetailedResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT full hub objects for up to 20 ids",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/leaderboard": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one page of a game region's ranked leaderboard: position, player identity and country, Elo, skill level, verification level and global position. With season set it reads the season-aware ranking and also returns the requested season and the available season history; without season it reads the all-time ranking. The upstream caps a page at 100 rows. An unknown game or region code is a valid empty page, not an error.",
+        "operationId": "faceit-leaderboard",
+        "parameters": [
+          {
+            "description": "Game slug, one of the values returned by faceit-games.",
+            "enum": [
+              "cs2",
+              "csgo",
+              "ow2",
+              "valorant",
+              "pubg",
+              "tf2",
+              "krunker",
+              "pubgmobile",
+              "apex",
+              "fortnite",
+              "wow",
+              "brawl_stars",
+              "insidia",
+              "dota2",
+              "hearthstone",
+              "wildrift",
+              "clash_royale",
+              "smite",
+              "lol_NA",
+              "lol_EUW",
+              "lol_EUN",
+              "overwatch_EU",
+              "wot_EU",
+              "wot_RU",
+              "rainbow_6",
+              "csdz",
+              "battalion"
+            ],
+            "in": "query",
+            "name": "game",
+            "required": true,
+            "type": "string",
+            "x-example": "cs2,csgo,ow2,valorant,pubg,tf2,krunker,pubgmobile,apex,fortnite,wow,brawl_stars,insidia,dota2,hearthstone,wildrift,clash_royale,smite,lol_NA,lol_EUW,lol_EUN,overwatch_EU,wot_EU,wot_RU,rainbow_6,csdz,battalion"
+          },
+          {
+            "description": "Region code such as EU or NA; see faceit-regions.",
+            "in": "query",
+            "name": "region",
+            "required": true,
+            "type": "string",
+            "x-example": "EU"
+          },
+          {
+            "description": "Optional season number; when set the season-aware ranking is read.",
+            "in": "query",
+            "name": "season",
+            "type": "integer",
+            "x-example": 10
+          },
+          {
+            "description": "Optional page size, 1-100; default 20 and the gateway caps a page at 100 rows.",
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "x-example": 20
+          },
+          {
+            "description": "Optional non-negative row offset.",
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "x-example": 0
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.LeaderboardResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT ranked leaderboard for one game and region",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/leaderboard-detail": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one leaderboard's full configuration: entity references, game and region, group/round/bracket placement, ranking and points configuration, scoring fields, prizes, requirements, status and ranking-field visibility rules. Leaderboard ids come from faceit-championship-search or faceit-standings. An unknown id answers 404.",
+        "operationId": "faceit-leaderboard-detail",
+        "parameters": [
+          {
+            "description": "24-character leaderboard id from faceit-championship-search or faceit-standings.",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "5b0d895ef2e59b000687c9ed"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.LeaderboardDetailResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT leaderboard detail by id",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/leaderboard-statuses": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the closed leaderboard status enum: ONGOING, UPCOMING and FINISHED. The upstream rejects lowercase and any other value, so callers must use these exact uppercase values. Also returns the observed entity type and leaderboard type values, which the gateway does not validate.",
+        "operationId": "faceit-leaderboard-statuses",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.LeaderboardStatusesResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT leaderboard status enum",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/maps": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns a game's votable map taxonomy: map id, display name, game map id, class name and two image sizes. A game without map configuration is answered with 404 by the upstream and surfaces as NotFound; discover valid game slugs from faceit-games.",
+        "operationId": "faceit-maps",
+        "parameters": [
+          {
+            "description": "Game slug, one of the values returned by faceit-games.",
+            "enum": [
+              "cs2",
+              "csgo",
+              "ow2",
+              "valorant",
+              "pubg",
+              "tf2",
+              "krunker",
+              "pubgmobile",
+              "apex",
+              "fortnite",
+              "wow",
+              "brawl_stars",
+              "insidia",
+              "dota2",
+              "hearthstone",
+              "wildrift",
+              "clash_royale",
+              "smite",
+              "lol_NA",
+              "lol_EUW",
+              "lol_EUN",
+              "overwatch_EU",
+              "wot_EU",
+              "wot_RU",
+              "rainbow_6",
+              "csdz",
+              "battalion"
+            ],
+            "in": "query",
+            "name": "game",
+            "required": true,
+            "type": "string",
+            "x-example": "cs2,csgo,ow2,valorant,pubg,tf2,krunker,pubgmobile,apex,fortnite,wow,brawl_stars,insidia,dota2,hearthstone,wildrift,clash_royale,smite,lol_NA,lol_EUW,lol_EUN,overwatch_EU,wot_EU,wot_RU,rainbow_6,csdz,battalion"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.MapsResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT votable maps for a game",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/match-clips": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one page of the Allstar clips attached to one FACEIT match: clip id, title, view count, embed URL, thumbnail, linked user and match ids, processing status, map and round. Match ids come from any clip row returned by faceit-clips or faceit-best-clips. Only cs2 has Allstar clips; an unknown match is a valid empty page.",
+        "operationId": "faceit-match-clips",
+        "parameters": [
+          {
+            "description": "Game slug; only cs2 has Allstar clips.",
+            "enum": [
+              "cs2"
+            ],
+            "in": "query",
+            "name": "game",
+            "required": true,
+            "type": "string",
+            "x-example": "cs2"
+          },
+          {
+            "description": "Upstream match id from a clip row, for example 1-bef84e57-4ce3-41aa-b5e5-2918228c1c28.",
+            "in": "query",
+            "name": "match_id",
+            "required": true,
+            "type": "string",
+            "x-example": "1-bef84e57-4ce3-41aa-b5e5-2918228c1c28"
+          },
+          {
+            "description": "Optional page size, 1-100; default 10.",
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "x-example": 10
+          },
+          {
+            "description": "Optional non-negative row offset.",
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "x-example": 0
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.MatchClipsResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT Allstar clips for one match",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/organizer": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one organizer's public profile: name and type, plan-tier limits, publication state, avatar and cover, sponsors, public staff roles, social links, supported games, description, featuring countries, countries, geo regions and features. Organizer ids appear as organizer_id on championship and leaderboard rows. The staff account ids are deliberately not mirrored. An unknown id answers 404.",
+        "operationId": "faceit-organizer",
+        "parameters": [
+          {
+            "description": "Organizer UUID.",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "73d4185d-559f-4dbc-8398-9eae47adfe27"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.OrganizerResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT organizer profile by id",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/player": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one FACEIT profile: nickname, avatar and cover image, country, verified/registration status, memberships and per-game competitive state (Elo, region, skill level and level label). Exactly one of nickname and user_id is required. The ranking routes accept the user id returned here. A nickname that does not exist is an unknown entity and answers 404; profile friends, streaming ids and linked platform accounts are deliberately not mirrored.",
+        "operationId": "faceit-player",
+        "parameters": [
+          {
+            "description": "Optional FACEIT nickname; exactly one of nickname and user_id is required.",
+            "in": "query",
+            "name": "nickname",
+            "type": "string",
+            "x-example": "dem0nnnnnnnn"
+          },
+          {
+            "description": "Optional FACEIT user UUID; exactly one of nickname and user_id is required.",
+            "in": "query",
+            "name": "user_id",
+            "type": "string",
+            "x-example": "74df0e6b-5b41-42d7-93b4-05dc78b9a699"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.PlayerResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT player profile by nickname or user id",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/player-rank": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one player's position in a game and region ranking, either the all-time ranking or a season-aware ranking when season is set. A nickname is resolved to its user id first, so a nickname request costs one extra upstream lookup. Position is null when the player has no rank there. Exactly one of nickname and user_id is required.",
+        "operationId": "faceit-player-rank",
+        "parameters": [
+          {
+            "description": "Game slug, one of the values returned by faceit-games.",
+            "enum": [
+              "cs2",
+              "csgo",
+              "ow2",
+              "valorant",
+              "pubg",
+              "tf2",
+              "krunker",
+              "pubgmobile",
+              "apex",
+              "fortnite",
+              "wow",
+              "brawl_stars",
+              "insidia",
+              "dota2",
+              "hearthstone",
+              "wildrift",
+              "clash_royale",
+              "smite",
+              "lol_NA",
+              "lol_EUW",
+              "lol_EUN",
+              "overwatch_EU",
+              "wot_EU",
+              "wot_RU",
+              "rainbow_6",
+              "csdz",
+              "battalion"
+            ],
+            "in": "query",
+            "name": "game",
+            "required": true,
+            "type": "string",
+            "x-example": "cs2,csgo,ow2,valorant,pubg,tf2,krunker,pubgmobile,apex,fortnite,wow,brawl_stars,insidia,dota2,hearthstone,wildrift,clash_royale,smite,lol_NA,lol_EUW,lol_EUN,overwatch_EU,wot_EU,wot_RU,rainbow_6,csdz,battalion"
+          },
+          {
+            "description": "Region code such as EU or NA; see faceit-regions for the documented values.",
+            "in": "query",
+            "name": "region",
+            "required": true,
+            "type": "string",
+            "x-example": "EU"
+          },
+          {
+            "description": "Optional FACEIT nickname; exactly one of nickname and user_id is required.",
+            "in": "query",
+            "name": "nickname",
+            "type": "string",
+            "x-example": "dem0nnnnnnnn"
+          },
+          {
+            "description": "Optional FACEIT user UUID; exactly one of nickname and user_id is required.",
+            "in": "query",
+            "name": "user_id",
+            "type": "string",
+            "x-example": "74df0e6b-5b41-42d7-93b4-05dc78b9a699"
+          },
+          {
+            "description": "Optional season number; when set the season-aware ranking is read.",
+            "in": "query",
+            "name": "season",
+            "type": "integer",
+            "x-example": 10
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.PlayerRankResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT player ranked position in one game and region",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/regions": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns the documented region values: the website client's GEO-REGION list, region codes observed serving live ranking data, and free-form region values seen on live championship leaderboard rows. Region is not a server-validated closed set, so this list is advisory and any well-formed 2-8 character code is forwarded to the upstream.",
+        "operationId": "faceit-regions",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.RegionsResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT region codes known to the website",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/rule": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one published rule set: rule id, name, game, organizer id, creation and update timestamps and the full rule body in markdown. Rule ids come from faceit-rules. An unknown id answers 404.",
+        "operationId": "faceit-rule",
+        "parameters": [
+          {
+            "description": "Rule UUID from faceit-rules.",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "43e07c2c-c0b2-4872-9826-6812eba70463"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.RuleResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT competition rule detail",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/rules": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one page of the published FACEIT competition rule sets: rule id, name, game, organizer id, creation and update timestamps and the full rule body in markdown. The upstream accepts entity filters but ignores them, so this route exposes only paging. Paging uses limit and offset.",
+        "operationId": "faceit-rules",
+        "parameters": [
+          {
+            "description": "Optional page size, 1-100; default 20.",
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "x-example": 20
+          },
+          {
+            "description": "Optional non-negative row offset.",
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "x-example": 0
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.RulesResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT published competition rules",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/skill-levels": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns a game's skill-level configuration: the level number (1-10) and its inclusive Elo band. This is the discovery surface for the skill levels that ranking rows report. The upstream returns a default mapping for any slug, so this route does not prove a game exists and is not an error for an unknown-but-valid slug.",
+        "operationId": "faceit-skill-levels",
+        "parameters": [
+          {
+            "description": "Game slug, one of the values returned by faceit-games.",
+            "enum": [
+              "cs2",
+              "csgo",
+              "ow2",
+              "valorant",
+              "pubg",
+              "tf2",
+              "krunker",
+              "pubgmobile",
+              "apex",
+              "fortnite",
+              "wow",
+              "brawl_stars",
+              "insidia",
+              "dota2",
+              "hearthstone",
+              "wildrift",
+              "clash_royale",
+              "smite",
+              "lol_NA",
+              "lol_EUW",
+              "lol_EUN",
+              "overwatch_EU",
+              "wot_EU",
+              "wot_RU",
+              "rainbow_6",
+              "csdz",
+              "battalion"
+            ],
+            "in": "query",
+            "name": "game",
+            "required": true,
+            "type": "string",
+            "x-example": "cs2,csgo,ow2,valorant,pubg,tf2,krunker,pubgmobile,apex,fortnite,wow,brawl_stars,insidia,dota2,hearthstone,wildrift,clash_royale,smite,lol_NA,lol_EUW,lol_EUN,overwatch_EU,wot_EU,wot_RU,rainbow_6,csdz,battalion"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.SkillLevelsResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT skill levels and Elo bands for a game",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/standings": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns a championship's standings for one group and round: the leaderboard identity and each ranked participant's entity id, name, avatar, skill level, country, played count, position and points. The upstream requires group and round plus a segment or match number. An entity or round without standings is a valid empty list, not an error.",
+        "operationId": "faceit-standings",
+        "parameters": [
+          {
+            "description": "Championship UUID from faceit-championship-search.",
+            "in": "query",
+            "name": "entity_id",
+            "required": true,
+            "type": "string",
+            "x-example": "9888a3f4-e292-4c3a-a511-15d5d2fb112b"
+          },
+          {
+            "description": "Group number.",
+            "in": "query",
+            "name": "group",
+            "required": true,
+            "type": "integer",
+            "x-example": 1
+          },
+          {
+            "description": "Round number, or a comma-separated list such as 1,2.",
+            "in": "query",
+            "name": "round",
+            "required": true,
+            "type": "string",
+            "x-example": "1"
+          },
+          {
+            "description": "Optional segment number; provide segment or match.",
+            "in": "query",
+            "name": "segment",
+            "type": "integer",
+            "x-example": 1
+          },
+          {
+            "description": "Optional match number; provide segment or match.",
+            "in": "query",
+            "name": "match",
+            "type": "integer",
+            "x-example": 1
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.StandingsResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT championship standings by group and round",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/team": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one public FACEIT team profile: name and nickname, game, leader, team type and status, description, country, avatar and cover, creation/update timestamps, social links, member and pending-member ids, and public member rows (guid, nickname, avatar, country and game list). Team ids are discovered from premade championship bracket faction ids in faceit-championship-bracket. An unknown id answers 404 and is returned as NotFound.",
+        "operationId": "faceit-team",
+        "parameters": [
+          {
+            "description": "Team UUID from a premade bracket faction id.",
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "type": "string",
+            "x-example": "3279bf46-2cd3-43d1-b4d7-2dfd24d1d843"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.TeamResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT team profile by id",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/tournaments-past": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns one page of a player's past tournament history. The upstream answered the sampled anonymous requests with an empty list and its non-empty item shape is unverified, so each item is passed through as raw upstream JSON rather than a guessed DTO. A nickname with no history is a valid empty result.",
+        "operationId": "faceit-tournaments-past",
+        "parameters": [
+          {
+            "description": "FACEIT nickname.",
+            "in": "query",
+            "name": "nickname",
+            "required": true,
+            "type": "string",
+            "x-example": "dem0nnnnnnnn"
+          },
+          {
+            "description": "Optional page size, 1-100; default 20.",
+            "in": "query",
+            "name": "limit",
+            "type": "integer",
+            "x-example": 20
+          },
+          {
+            "description": "Optional non-negative row offset.",
+            "in": "query",
+            "name": "offset",
+            "type": "integer",
+            "x-example": 0
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.TournamentsPastResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT player past tournament history",
+        "tags": [
+          "faceit"
+        ]
+      }
+    },
+    "/faceit/user-skills": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Returns competitive skill entries for a bounded batch of up to 10 players in one game: Elo value, skill level, ranked match count, latest Elo delta, current win streak and the professional-player flag, plus the upstream skill expiration timestamp. Duplicate ids are collapsed and unknown users are omitted, so the entries list can be shorter than the request and is a valid empty result when no player has skill data. The upstream requires exactly one game per request and returns entries in its own order.",
+        "operationId": "faceit-user-skills",
+        "parameters": [
+          {
+            "collectionFormat": "multi",
+            "description": "Required FACEIT user UUIDs; repeat the parameter for up to 10 users.",
+            "in": "query",
+            "items": {
+              "type": "string"
+            },
+            "name": "user_ids",
+            "required": true,
+            "type": "array",
+            "x-example": "74df0e6b-5b41-42d7-93b4-05dc78b9a699"
+          },
+          {
+            "description": "Game slug, one of the values returned by faceit-games.",
+            "in": "query",
+            "name": "game",
+            "required": true,
+            "type": "string",
+            "x-example": "cs2,csgo,ow2,valorant,pubg,tf2,krunker,pubgmobile,apex,fortnite,wow,brawl_stars,insidia,dota2,hearthstone,wildrift,clash_royale,smite,lol_NA,lol_EUW,lol_EUN,overwatch_EU,wot_EU,wot_RU,rainbow_6,csdz,battalion"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "allOf": [
+                {
+                  "$ref": "#/definitions/app.Response"
+                },
+                {
+                  "properties": {
+                    "data": {
+                      "$ref": "#/definitions/faceit.UserSkillsResponse"
+                    }
+                  },
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "schema": {
+              "$ref": "#/definitions/app.Response"
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ],
+        "summary": "FACEIT player skills for up to 10 users in one game",
+        "tags": [
+          "faceit"
+        ]
+      }
+    }
+  },
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "ApiKeyAuth": {
+      "in": "header",
+      "name": "x-api-key",
+      "type": "apiKey"
+    }
+  },
+  "swagger": "2.0",
+  "tags": [
+    {
+      "name": "faceit"
+    }
+  ]
+}
