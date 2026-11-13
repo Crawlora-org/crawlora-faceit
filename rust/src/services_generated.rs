@@ -13,7 +13,9 @@ pub struct Services {
 impl Services {
     pub(crate) fn new(inner: Arc<ClientInner>) -> Self {
         Self {
-            faceit: FaceitApi { inner: Arc::clone(&inner) },
+            faceit: FaceitApi {
+                inner: Arc::clone(&inner),
+            },
         }
     }
 }
@@ -341,36 +343,52 @@ pub struct FaceitApi {
 
 impl FaceitApi {
     pub async fn ban_reasons(&self, params: FaceitBanReasonsParams) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-ban-reasons", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-ban-reasons", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn banlist(&self, params: FaceitBanlistParams) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-banlist", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-banlist", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn banlist_stats(
         &self,
         params: FaceitBanlistStatsParams,
     ) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-banlist-stats", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-banlist-stats", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn best_clips(&self, params: FaceitBestClipsParams) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-best-clips", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-best-clips", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn championship(
         &self,
         params: FaceitChampionshipParams,
     ) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-championship", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-championship", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn championship_bracket(
         &self,
         params: FaceitChampionshipBracketParams,
     ) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-championship-bracket", &params, RequestOptions::default()).await
+        self.inner
+            .call(
+                "faceit-championship-bracket",
+                &params,
+                RequestOptions::default(),
+            )
+            .await
     }
 
     pub async fn championship_participants(
@@ -390,139 +408,214 @@ impl FaceitApi {
         &self,
         params: FaceitChampionshipSearchParams,
     ) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-championship-search", &params, RequestOptions::default()).await
+        self.inner
+            .call(
+                "faceit-championship-search",
+                &params,
+                RequestOptions::default(),
+            )
+            .await
     }
 
     pub async fn clip(&self, params: FaceitClipParams) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-clip", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-clip", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn clips(&self, params: FaceitClipsParams) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-clips", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-clips", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn competition_matches(
         &self,
         params: FaceitCompetitionMatchesParams,
     ) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-competition-matches", &params, RequestOptions::default()).await
+        self.inner
+            .call(
+                "faceit-competition-matches",
+                &params,
+                RequestOptions::default(),
+            )
+            .await
     }
 
     pub async fn fpl(&self, params: FaceitFplParams) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-fpl", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-fpl", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn game_modes(&self, params: FaceitGameModesParams) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-game-modes", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-game-modes", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn games(&self, params: FaceitGamesParams) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-games", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-games", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn hub(&self, params: FaceitHubParams) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-hub", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-hub", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn hub_categories(
         &self,
         params: FaceitHubCategoriesParams,
     ) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-hub-categories", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-hub-categories", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn hub_memberships(
         &self,
         params: FaceitHubMembershipsParams,
     ) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-hub-memberships", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-hub-memberships", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn hubs(&self, params: FaceitHubsParams) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-hubs", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-hubs", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn hubs_detailed(
         &self,
         params: FaceitHubsDetailedParams,
     ) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-hubs-detailed", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-hubs-detailed", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn leaderboard(&self, params: FaceitLeaderboardParams) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-leaderboard", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-leaderboard", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn leaderboard_detail(
         &self,
         params: FaceitLeaderboardDetailParams,
     ) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-leaderboard-detail", &params, RequestOptions::default()).await
+        self.inner
+            .call(
+                "faceit-leaderboard-detail",
+                &params,
+                RequestOptions::default(),
+            )
+            .await
     }
 
     pub async fn leaderboard_statuses(
         &self,
         params: FaceitLeaderboardStatusesParams,
     ) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-leaderboard-statuses", &params, RequestOptions::default()).await
+        self.inner
+            .call(
+                "faceit-leaderboard-statuses",
+                &params,
+                RequestOptions::default(),
+            )
+            .await
     }
 
     pub async fn maps(&self, params: FaceitMapsParams) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-maps", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-maps", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn match_clips(&self, params: FaceitMatchClipsParams) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-match-clips", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-match-clips", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn organizer(&self, params: FaceitOrganizerParams) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-organizer", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-organizer", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn player(&self, params: FaceitPlayerParams) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-player", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-player", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn player_rank(&self, params: FaceitPlayerRankParams) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-player-rank", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-player-rank", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn regions(&self, params: FaceitRegionsParams) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-regions", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-regions", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn rule(&self, params: FaceitRuleParams) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-rule", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-rule", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn rules(&self, params: FaceitRulesParams) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-rules", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-rules", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn skill_levels(
         &self,
         params: FaceitSkillLevelsParams,
     ) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-skill-levels", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-skill-levels", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn standings(&self, params: FaceitStandingsParams) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-standings", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-standings", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn team(&self, params: FaceitTeamParams) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-team", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-team", &params, RequestOptions::default())
+            .await
     }
 
     pub async fn tournaments_past(
         &self,
         params: FaceitTournamentsPastParams,
     ) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-tournaments-past", &params, RequestOptions::default()).await
+        self.inner
+            .call(
+                "faceit-tournaments-past",
+                &params,
+                RequestOptions::default(),
+            )
+            .await
     }
 
     pub async fn user_skills(&self, params: FaceitUserSkillsParams) -> Result<ApiResponse, Error> {
-        self.inner.call("faceit-user-skills", &params, RequestOptions::default()).await
+        self.inner
+            .call("faceit-user-skills", &params, RequestOptions::default())
+            .await
     }
-
 }

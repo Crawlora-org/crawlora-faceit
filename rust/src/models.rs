@@ -21,7 +21,11 @@ pub struct ModelFaceitBan {
     pub avatar: Option<String>,
     #[serde(rename = "country", default, skip_serializing_if = "Option::is_none")]
     pub country: Option<String>,
-    #[serde(rename = "duration_in_millis", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "duration_in_millis",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub duration_in_millis: Option<i64>,
     #[serde(rename = "ends_at", default, skip_serializing_if = "Option::is_none")]
     pub ends_at: Option<String>,
@@ -43,13 +47,25 @@ pub struct ModelFaceitBan {
 pub struct ModelFaceitBanReasonsResponse {
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "reasons", default, skip_serializing_if = "Option::is_none")]
     pub reasons: Option<Vec<String>>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
-    #[serde(rename = "verified_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "verified_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub verified_at: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -63,11 +79,19 @@ pub struct ModelFaceitBanlistResponse {
     pub count: Option<i64>,
     #[serde(rename = "cursor", default, skip_serializing_if = "Option::is_none")]
     pub cursor: Option<String>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "size", default, skip_serializing_if = "Option::is_none")]
     pub size: Option<i64>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -77,13 +101,29 @@ pub struct ModelFaceitBanlistResponse {
 pub struct ModelFaceitBanlistStatsResponse {
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
-    #[serde(rename = "last_12_months", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "last_12_months",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub last_12_months: Option<i64>,
-    #[serde(rename = "last_30_days", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "last_30_days",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub last_30_days: Option<i64>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -95,7 +135,11 @@ pub struct ModelFaceitBestClipsResponse {
     pub clips: Option<Vec<ModelFaceitClip>>,
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "from", default, skip_serializing_if = "Option::is_none")]
     pub from: Option<String>,
@@ -103,7 +147,11 @@ pub struct ModelFaceitBestClipsResponse {
     pub game: Option<String>,
     #[serde(rename = "limit", default, skip_serializing_if = "Option::is_none")]
     pub limit: Option<i64>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(rename = "to", default, skip_serializing_if = "Option::is_none")]
     pub to: Option<String>,
@@ -113,23 +161,55 @@ pub struct ModelFaceitBestClipsResponse {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitChampionship {
-    #[serde(rename = "ac_required", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "ac_required",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub ac_required: Option<bool>,
-    #[serde(rename = "admin_tool_enabled", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "admin_tool_enabled",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub admin_tool_enabled: Option<bool>,
     #[serde(rename = "archived", default, skip_serializing_if = "Option::is_none")]
     pub archived: Option<bool>,
-    #[serde(rename = "calculate_elo", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "calculate_elo",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub calculate_elo: Option<bool>,
-    #[serde(rename = "championship_start", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "championship_start",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub championship_start: Option<i64>,
-    #[serde(rename = "checkin_clear", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "checkin_clear",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub checkin_clear: Option<i64>,
-    #[serde(rename = "checkin_enabled", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "checkin_enabled",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub checkin_enabled: Option<bool>,
-    #[serde(rename = "checkin_start", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "checkin_start",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub checkin_start: Option<i64>,
-    #[serde(rename = "current_subscriptions", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "current_subscriptions",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub current_subscriptions: Option<i64>,
     #[serde(rename = "featured", default, skip_serializing_if = "Option::is_none")]
     pub featured: Option<bool>,
@@ -137,35 +217,67 @@ pub struct ModelFaceitChampionship {
     pub full: Option<bool>,
     #[serde(rename = "game", default, skip_serializing_if = "Option::is_none")]
     pub game: Option<String>,
-    #[serde(rename = "group_seeding_strategy", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "group_seeding_strategy",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub group_seeding_strategy: Option<String>,
     #[serde(rename = "groups", default, skip_serializing_if = "Option::is_none")]
     pub groups: Option<std::collections::BTreeMap<String, ModelFaceitChampionshipGroup>>,
     #[serde(rename = "id", default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
-    #[serde(rename = "join_checks", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "join_checks",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub join_checks: Option<ModelFaceitChampionshipJoinChecks>,
-    #[serde(rename = "leaderboard_points", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "leaderboard_points",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub leaderboard_points: Option<std::collections::BTreeMap<String, i64>>,
-    #[serde(rename = "match_configuration", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "match_configuration",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub match_configuration: Option<ModelFaceitChampionshipMatchConfiguration>,
     #[serde(rename = "name", default, skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
     #[serde(rename = "organizer", default, skip_serializing_if = "Option::is_none")]
     pub organizer: Option<ModelFaceitChampionshipOrganizer>,
-    #[serde(rename = "organizer_id", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "organizer_id",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub organizer_id: Option<String>,
-    #[serde(rename = "participants", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "participants",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub participants: Option<ModelFaceitChampionshipParticipants>,
     #[serde(rename = "published", default, skip_serializing_if = "Option::is_none")]
     pub published: Option<bool>,
-    #[serde(rename = "ranking_type", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "ranking_type",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub ranking_type: Option<String>,
     #[serde(rename = "region", default, skip_serializing_if = "Option::is_none")]
     pub region: Option<String>,
     #[serde(rename = "roles", default, skip_serializing_if = "Option::is_none")]
     pub roles: Option<Vec<ModelFaceitChampionshipRole>>,
-    #[serde(rename = "round_seeding_strategy", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "round_seeding_strategy",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub round_seeding_strategy: Option<String>,
     #[serde(rename = "schedule", default, skip_serializing_if = "Option::is_none")]
     pub schedule: Option<std::collections::BTreeMap<String, ModelFaceitChampionshipSchedule>>,
@@ -173,17 +285,41 @@ pub struct ModelFaceitChampionship {
     pub slots: Option<i64>,
     #[serde(rename = "status", default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
-    #[serde(rename = "subscription_end", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "subscription_end",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub subscription_end: Option<i64>,
-    #[serde(rename = "subscription_start", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "subscription_start",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub subscription_start: Option<i64>,
-    #[serde(rename = "subscriptions_locked", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "subscriptions_locked",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub subscriptions_locked: Option<bool>,
-    #[serde(rename = "substitution", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "substitution",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub substitution: Option<ModelFaceitChampionshipSubstitution>,
-    #[serde(rename = "total_groups", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "total_groups",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub total_groups: Option<i64>,
-    #[serde(rename = "total_rounds", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "total_rounds",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub total_rounds: Option<i64>,
     #[serde(rename = "type", default, skip_serializing_if = "Option::is_none")]
     pub type_: Option<String>,
@@ -193,7 +329,11 @@ pub struct ModelFaceitChampionship {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitChampionshipBracketGroup {
-    #[serde(rename = "championship_id", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "championship_id",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub championship_id: Option<String>,
     #[serde(rename = "delimiter", default, skip_serializing_if = "Option::is_none")]
     pub delimiter: Option<i64>,
@@ -211,13 +351,21 @@ pub struct ModelFaceitChampionshipBracketGroup {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitChampionshipBracketMatch {
-    #[serde(rename = "bracket_placement", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "bracket_placement",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub bracket_placement: Option<i64>,
     #[serde(rename = "factions", default, skip_serializing_if = "Option::is_none")]
     pub factions: Option<Vec<ModelFaceitChampionshipFaction>>,
     #[serde(rename = "status", default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
-    #[serde(rename = "total_factions", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "total_factions",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub total_factions: Option<i64>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -229,11 +377,19 @@ pub struct ModelFaceitChampionshipBracketResponse {
     pub count: Option<i64>,
     #[serde(rename = "end", default, skip_serializing_if = "Option::is_none")]
     pub end: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "items", default, skip_serializing_if = "Option::is_none")]
     pub items: Option<Vec<ModelFaceitChampionshipBracketGroup>>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(rename = "start", default, skip_serializing_if = "Option::is_none")]
     pub start: Option<i64>,
@@ -263,17 +419,41 @@ pub struct ModelFaceitChampionshipGroup {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitChampionshipJoinChecks {
-    #[serde(rename = "allowed_team_types", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "allowed_team_types",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub allowed_team_types: Option<Vec<String>>,
-    #[serde(rename = "blacklist_geo_countries", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "blacklist_geo_countries",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub blacklist_geo_countries: Option<Vec<String>>,
-    #[serde(rename = "join_policy", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "join_policy",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub join_policy: Option<String>,
-    #[serde(rename = "max_skill_level", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "max_skill_level",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub max_skill_level: Option<i64>,
-    #[serde(rename = "min_skill_level", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "min_skill_level",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub min_skill_level: Option<i64>,
-    #[serde(rename = "whitelist_geo_countries", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "whitelist_geo_countries",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub whitelist_geo_countries: Option<Vec<String>>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -293,7 +473,11 @@ pub struct ModelFaceitChampionshipMatchConfiguration {
     pub id: Option<String>,
     #[serde(rename = "label_en", default, skip_serializing_if = "Option::is_none")]
     pub label_en: Option<String>,
-    #[serde(rename = "max_players", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "max_players",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub max_players: Option<i64>,
     #[serde(rename = "name", default, skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
@@ -307,9 +491,17 @@ pub struct ModelFaceitChampionshipMatchConfiguration {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitChampionshipMember {
-    #[serde(rename = "championship", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "championship",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub championship: Option<ModelFaceitChampionshipMemberEvent>,
-    #[serde(rename = "championship_status", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "championship_status",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub championship_status: Option<String>,
     #[serde(rename = "id", default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
@@ -329,7 +521,11 @@ pub struct ModelFaceitChampionshipMemberEvent {
     pub id: Option<String>,
     #[serde(rename = "name", default, skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
-    #[serde(rename = "organizer_id", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "organizer_id",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub organizer_id: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -337,7 +533,11 @@ pub struct ModelFaceitChampionshipMemberEvent {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitChampionshipMemberUser {
-    #[serde(rename = "avatar_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "avatar_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub avatar_url: Option<String>,
     #[serde(rename = "country", default, skip_serializing_if = "Option::is_none")]
     pub country: Option<String>,
@@ -365,7 +565,11 @@ pub struct ModelFaceitChampionshipOrganizer {
 pub struct ModelFaceitChampionshipParticipants {
     #[serde(rename = "total", default, skip_serializing_if = "Option::is_none")]
     pub total: Option<i64>,
-    #[serde(rename = "with_reserved_slot", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "with_reserved_slot",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub with_reserved_slot: Option<i64>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -377,7 +581,11 @@ pub struct ModelFaceitChampionshipParticipantsResponse {
     pub count: Option<i64>,
     #[serde(rename = "end", default, skip_serializing_if = "Option::is_none")]
     pub end: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "items", default, skip_serializing_if = "Option::is_none")]
     pub items: Option<Vec<ModelFaceitChampionshipMember>>,
@@ -385,7 +593,11 @@ pub struct ModelFaceitChampionshipParticipantsResponse {
     pub limit: Option<i64>,
     #[serde(rename = "offset", default, skip_serializing_if = "Option::is_none")]
     pub offset: Option<i64>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(rename = "start", default, skip_serializing_if = "Option::is_none")]
     pub start: Option<i64>,
@@ -395,13 +607,25 @@ pub struct ModelFaceitChampionshipParticipantsResponse {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitChampionshipResponse {
-    #[serde(rename = "championship", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "championship",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub championship: Option<ModelFaceitChampionship>,
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -433,7 +657,11 @@ pub struct ModelFaceitChampionshipSchedule {
 pub struct ModelFaceitChampionshipSearchResponse {
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "items", default, skip_serializing_if = "Option::is_none")]
     pub items: Option<Vec<ModelFaceitLeaderboard>>,
@@ -441,7 +669,11 @@ pub struct ModelFaceitChampionshipSearchResponse {
     pub limit: Option<i64>,
     #[serde(rename = "offset", default, skip_serializing_if = "Option::is_none")]
     pub offset: Option<i64>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -449,13 +681,29 @@ pub struct ModelFaceitChampionshipSearchResponse {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitChampionshipSubstitution {
-    #[serde(rename = "max_substitutes", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "max_substitutes",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub max_substitutes: Option<i64>,
-    #[serde(rename = "max_substitutions", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "max_substitutions",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub max_substitutions: Option<i64>,
-    #[serde(rename = "substitution_time", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "substitution_time",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub substitution_time: Option<i64>,
-    #[serde(rename = "substitutions_per_round_enabled", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "substitutions_per_round_enabled",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub substitutions_per_round_enabled: Option<bool>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -463,11 +711,19 @@ pub struct ModelFaceitChampionshipSubstitution {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitClip {
-    #[serde(rename = "created_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "created_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub created_at: Option<String>,
     #[serde(rename = "demo", default, skip_serializing_if = "Option::is_none")]
     pub demo: Option<String>,
-    #[serde(rename = "faceit_round", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "faceit_round",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub faceit_round: Option<i64>,
     #[serde(rename = "id", default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
@@ -475,7 +731,11 @@ pub struct ModelFaceitClip {
     pub map: Option<String>,
     #[serde(rename = "match_id", default, skip_serializing_if = "Option::is_none")]
     pub match_id: Option<String>,
-    #[serde(rename = "match_instance_id", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "match_instance_id",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub match_instance_id: Option<String>,
     #[serde(rename = "reason", default, skip_serializing_if = "Option::is_none")]
     pub reason: Option<String>,
@@ -483,11 +743,19 @@ pub struct ModelFaceitClip {
     pub round: Option<i64>,
     #[serde(rename = "status", default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
-    #[serde(rename = "thumbnail_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "thumbnail_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub thumbnail_url: Option<String>,
     #[serde(rename = "title", default, skip_serializing_if = "Option::is_none")]
     pub title: Option<String>,
-    #[serde(rename = "updated_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "updated_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub updated_at: Option<String>,
     #[serde(rename = "url", default, skip_serializing_if = "Option::is_none")]
     pub url: Option<String>,
@@ -505,9 +773,17 @@ pub struct ModelFaceitClipResponse {
     pub clip: Option<ModelFaceitClip>,
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -519,7 +795,11 @@ pub struct ModelFaceitClipsResponse {
     pub clips: Option<Vec<ModelFaceitClip>>,
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "has_more", default, skip_serializing_if = "Option::is_none")]
     pub has_more: Option<bool>,
@@ -527,7 +807,11 @@ pub struct ModelFaceitClipsResponse {
     pub limit: Option<i64>,
     #[serde(rename = "offset", default, skip_serializing_if = "Option::is_none")]
     pub offset: Option<i64>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -537,7 +821,11 @@ pub struct ModelFaceitClipsResponse {
 pub struct ModelFaceitCompetitionMatchesResponse {
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "matches", default, skip_serializing_if = "Option::is_none")]
     pub matches: Option<Vec<serde_json::Value>>,
@@ -545,7 +833,11 @@ pub struct ModelFaceitCompetitionMatchesResponse {
     pub page: Option<i64>,
     #[serde(rename = "size", default, skip_serializing_if = "Option::is_none")]
     pub size: Option<i64>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -561,7 +853,11 @@ pub struct ModelFaceitFplcircuit {
     pub id: Option<String>,
     #[serde(rename = "name", default, skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
-    #[serde(rename = "ranking_source", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "ranking_source",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub ranking_source: Option<ModelFaceitFplrankingSource>,
     #[serde(rename = "region", default, skip_serializing_if = "Option::is_none")]
     pub region: Option<String>,
@@ -585,7 +881,11 @@ pub struct ModelFaceitFplresponse {
     pub circuits: Option<Vec<ModelFaceitFplcircuit>>,
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "has_more", default, skip_serializing_if = "Option::is_none")]
     pub has_more: Option<bool>,
@@ -593,7 +893,11 @@ pub struct ModelFaceitFplresponse {
     pub limit: Option<i64>,
     #[serde(rename = "offset", default, skip_serializing_if = "Option::is_none")]
     pub offset: Option<i64>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -605,7 +909,11 @@ pub struct ModelFaceitFplseason {
     pub ended_at: Option<String>,
     #[serde(rename = "number", default, skip_serializing_if = "Option::is_none")]
     pub number: Option<i64>,
-    #[serde(rename = "started_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "started_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub started_at: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -615,9 +923,17 @@ pub struct ModelFaceitFplseason {
 pub struct ModelFaceitGame {
     #[serde(rename = "clips", default, skip_serializing_if = "Option::is_none")]
     pub clips: Option<bool>,
-    #[serde(rename = "leaderboard_verified", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "leaderboard_verified",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub leaderboard_verified: Option<bool>,
-    #[serde(rename = "map_configuration", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "map_configuration",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub map_configuration: Option<bool>,
     #[serde(rename = "slug", default, skip_serializing_if = "Option::is_none")]
     pub slug: Option<String>,
@@ -627,9 +943,17 @@ pub struct ModelFaceitGame {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitGameMap {
-    #[serde(rename = "class_name", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "class_name",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub class_name: Option<String>,
-    #[serde(rename = "game_map_id", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "game_map_id",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub game_map_id: Option<String>,
     #[serde(rename = "guid", default, skip_serializing_if = "Option::is_none")]
     pub guid: Option<String>,
@@ -651,7 +975,11 @@ pub struct ModelFaceitGameMode {
     pub id: Option<String>,
     #[serde(rename = "label", default, skip_serializing_if = "Option::is_none")]
     pub label: Option<std::collections::BTreeMap<String, String>>,
-    #[serde(rename = "spectators", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "spectators",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub spectators: Option<bool>,
     #[serde(rename = "team_size", default, skip_serializing_if = "Option::is_none")]
     pub team_size: Option<i64>,
@@ -663,7 +991,11 @@ pub struct ModelFaceitGameMode {
 pub struct ModelFaceitGameModesResponse {
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "game", default, skip_serializing_if = "Option::is_none")]
     pub game: Option<String>,
@@ -671,7 +1003,11 @@ pub struct ModelFaceitGameModesResponse {
     pub modes: Option<Vec<ModelFaceitGameMode>>,
     #[serde(rename = "region", default, skip_serializing_if = "Option::is_none")]
     pub region: Option<String>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -679,15 +1015,27 @@ pub struct ModelFaceitGameModesResponse {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitGameSkill {
-    #[serde(rename = "latest_delta", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "latest_delta",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub latest_delta: Option<i64>,
     #[serde(rename = "level", default, skip_serializing_if = "Option::is_none")]
     pub level: Option<i64>,
-    #[serde(rename = "ranked_match_count", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "ranked_match_count",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub ranked_match_count: Option<i64>,
     #[serde(rename = "value", default, skip_serializing_if = "Option::is_none")]
     pub value: Option<i64>,
-    #[serde(rename = "win_streak", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "win_streak",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub win_streak: Option<i64>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -699,13 +1047,25 @@ pub struct ModelFaceitGamesResponse {
     pub complete: Option<bool>,
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "games", default, skip_serializing_if = "Option::is_none")]
     pub games: Option<Vec<ModelFaceitGame>>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
-    #[serde(rename = "verified_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "verified_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub verified_at: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -713,9 +1073,17 @@ pub struct ModelFaceitGamesResponse {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitHub {
-    #[serde(rename = "admin_tool_enabled", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "admin_tool_enabled",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub admin_tool_enabled: Option<bool>,
-    #[serde(rename = "application_configuration", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "application_configuration",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub application_configuration: Option<ModelFaceitHubApplicationSettings>,
     #[serde(rename = "archived", default, skip_serializing_if = "Option::is_none")]
     pub archived: Option<bool>,
@@ -723,35 +1091,83 @@ pub struct ModelFaceitHub {
     pub avatar: Option<String>,
     #[serde(rename = "category", default, skip_serializing_if = "Option::is_none")]
     pub category: Option<String>,
-    #[serde(rename = "chat_settings", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "chat_settings",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub chat_settings: Option<ModelFaceitHubChatSettings>,
-    #[serde(rename = "check_game", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "check_game",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub check_game: Option<bool>,
-    #[serde(rename = "check_geo_location", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "check_geo_location",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub check_geo_location: Option<bool>,
-    #[serde(rename = "check_region", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "check_region",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub check_region: Option<bool>,
     #[serde(rename = "child_ids", default, skip_serializing_if = "Option::is_none")]
     pub child_ids: Option<Vec<String>>,
     #[serde(rename = "children", default, skip_serializing_if = "Option::is_none")]
     pub children: Option<Vec<ModelFaceitHubChild>>,
-    #[serde(rename = "clash_slots_available", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "clash_slots_available",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub clash_slots_available: Option<bool>,
     #[serde(rename = "club", default, skip_serializing_if = "Option::is_none")]
     pub club: Option<bool>,
-    #[serde(rename = "cover_image", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "cover_image",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub cover_image: Option<String>,
-    #[serde(rename = "created_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "created_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub created_at: Option<String>,
-    #[serde(rename = "current_players_joined", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "current_players_joined",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub current_players_joined: Option<i64>,
-    #[serde(rename = "custom_prizes_count", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "custom_prizes_count",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub custom_prizes_count: Option<i64>,
-    #[serde(rename = "description", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "description",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub description: Option<String>,
-    #[serde(rename = "faceit_points_equivalent_total", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "faceit_points_equivalent_total",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub faceit_points_equivalent_total: Option<i64>,
-    #[serde(rename = "faceit_points_total", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "faceit_points_total",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub faceit_points_total: Option<i64>,
     #[serde(rename = "featured", default, skip_serializing_if = "Option::is_none")]
     pub featured: Option<bool>,
@@ -759,35 +1175,71 @@ pub struct ModelFaceitHub {
     pub game: Option<String>,
     #[serde(rename = "guid", default, skip_serializing_if = "Option::is_none")]
     pub guid: Option<String>,
-    #[serde(rename = "join_permissions", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "join_permissions",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub join_permissions: Option<String>,
-    #[serde(rename = "max_skill_level", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "max_skill_level",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub max_skill_level: Option<i64>,
-    #[serde(rename = "min_skill_level", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "min_skill_level",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub min_skill_level: Option<i64>,
     #[serde(rename = "name", default, skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
-    #[serde(rename = "organizer_guid", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "organizer_guid",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub organizer_guid: Option<String>,
-    #[serde(rename = "organizer_name", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "organizer_name",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub organizer_name: Option<String>,
     #[serde(rename = "published", default, skip_serializing_if = "Option::is_none")]
     pub published: Option<bool>,
     #[serde(rename = "region", default, skip_serializing_if = "Option::is_none")]
     pub region: Option<String>,
-    #[serde(rename = "relationship_type", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "relationship_type",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub relationship_type: Option<String>,
     #[serde(rename = "roles", default, skip_serializing_if = "Option::is_none")]
     pub roles: Option<Vec<ModelFaceitHubRole>>,
-    #[serde(rename = "rules_guid", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "rules_guid",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub rules_guid: Option<String>,
-    #[serde(rename = "selection_settings", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "selection_settings",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub selection_settings: Option<ModelFaceitHubSelectionSettings>,
     #[serde(rename = "sensitive", default, skip_serializing_if = "Option::is_none")]
     pub sensitive: Option<bool>,
     #[serde(rename = "slots", default, skip_serializing_if = "Option::is_none")]
     pub slots: Option<i64>,
-    #[serde(rename = "supporter_badge_image", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "supporter_badge_image",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub supporter_badge_image: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -795,9 +1247,17 @@ pub struct ModelFaceitHub {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitHubApplicationSettings {
-    #[serde(rename = "applicant_input_required", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "applicant_input_required",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub applicant_input_required: Option<bool>,
-    #[serde(rename = "applications_enabled", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "applications_enabled",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub applications_enabled: Option<bool>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -805,15 +1265,31 @@ pub struct ModelFaceitHubApplicationSettings {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitHubCategoriesResponse {
-    #[serde(rename = "categories", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "categories",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub categories: Option<Vec<String>>,
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
-    #[serde(rename = "verified_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "verified_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub verified_at: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -821,9 +1297,17 @@ pub struct ModelFaceitHubCategoriesResponse {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitHubChatSettings {
-    #[serde(rename = "join_announcements", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "join_announcements",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub join_announcements: Option<bool>,
-    #[serde(rename = "subscription_announcements", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "subscription_announcements",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub subscription_announcements: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -833,7 +1317,11 @@ pub struct ModelFaceitHubChatSettings {
 pub struct ModelFaceitHubChild {
     #[serde(rename = "category", default, skip_serializing_if = "Option::is_none")]
     pub category: Option<String>,
-    #[serde(rename = "current_players_joined", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "current_players_joined",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub current_players_joined: Option<i64>,
     #[serde(rename = "game", default, skip_serializing_if = "Option::is_none")]
     pub game: Option<String>,
@@ -847,7 +1335,11 @@ pub struct ModelFaceitHubChild {
     pub published: Option<bool>,
     #[serde(rename = "region", default, skip_serializing_if = "Option::is_none")]
     pub region: Option<String>,
-    #[serde(rename = "relationship_type", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "relationship_type",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub relationship_type: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -855,7 +1347,11 @@ pub struct ModelFaceitHubChild {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitHubCompetition {
-    #[serde(rename = "announcement", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "announcement",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub announcement: Option<String>,
     #[serde(rename = "avatar", default, skip_serializing_if = "Option::is_none")]
     pub avatar: Option<String>,
@@ -863,27 +1359,55 @@ pub struct ModelFaceitHubCompetition {
     pub category: Option<String>,
     #[serde(rename = "child_ids", default, skip_serializing_if = "Option::is_none")]
     pub child_ids: Option<Vec<String>>,
-    #[serde(rename = "current_players_joined", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "current_players_joined",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub current_players_joined: Option<i64>,
-    #[serde(rename = "custom_prizes_count", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "custom_prizes_count",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub custom_prizes_count: Option<i64>,
     #[serde(rename = "game", default, skip_serializing_if = "Option::is_none")]
     pub game: Option<String>,
     #[serde(rename = "guid", default, skip_serializing_if = "Option::is_none")]
     pub guid: Option<String>,
-    #[serde(rename = "join_permissions", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "join_permissions",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub join_permissions: Option<String>,
-    #[serde(rename = "max_skill_level", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "max_skill_level",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub max_skill_level: Option<i64>,
-    #[serde(rename = "min_skill_level", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "min_skill_level",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub min_skill_level: Option<i64>,
     #[serde(rename = "name", default, skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
-    #[serde(rename = "organizer_name", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "organizer_name",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub organizer_name: Option<String>,
     #[serde(rename = "published", default, skip_serializing_if = "Option::is_none")]
     pub published: Option<bool>,
-    #[serde(rename = "whitelist_geo_countries", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "whitelist_geo_countries",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub whitelist_geo_countries: Option<Vec<String>>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -891,9 +1415,17 @@ pub struct ModelFaceitHubCompetition {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitHubDetailed {
-    #[serde(rename = "admin_tool_enabled", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "admin_tool_enabled",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub admin_tool_enabled: Option<bool>,
-    #[serde(rename = "application_configuration", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "application_configuration",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub application_configuration: Option<ModelFaceitHubApplicationSettings>,
     #[serde(rename = "archived", default, skip_serializing_if = "Option::is_none")]
     pub archived: Option<bool>,
@@ -901,33 +1433,81 @@ pub struct ModelFaceitHubDetailed {
     pub avatar: Option<String>,
     #[serde(rename = "category", default, skip_serializing_if = "Option::is_none")]
     pub category: Option<String>,
-    #[serde(rename = "chat_settings", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "chat_settings",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub chat_settings: Option<ModelFaceitHubChatSettings>,
-    #[serde(rename = "check_game", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "check_game",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub check_game: Option<bool>,
-    #[serde(rename = "check_geo_location", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "check_geo_location",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub check_geo_location: Option<bool>,
-    #[serde(rename = "check_region", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "check_region",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub check_region: Option<bool>,
     #[serde(rename = "child_ids", default, skip_serializing_if = "Option::is_none")]
     pub child_ids: Option<Vec<String>>,
-    #[serde(rename = "clash_slots_available", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "clash_slots_available",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub clash_slots_available: Option<bool>,
     #[serde(rename = "club", default, skip_serializing_if = "Option::is_none")]
     pub club: Option<bool>,
-    #[serde(rename = "cover_image", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "cover_image",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub cover_image: Option<String>,
-    #[serde(rename = "created_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "created_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub created_at: Option<String>,
-    #[serde(rename = "current_players_joined", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "current_players_joined",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub current_players_joined: Option<i64>,
-    #[serde(rename = "custom_prizes_count", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "custom_prizes_count",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub custom_prizes_count: Option<i64>,
-    #[serde(rename = "description", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "description",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub description: Option<String>,
-    #[serde(rename = "faceit_points_equivalent_total", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "faceit_points_equivalent_total",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub faceit_points_equivalent_total: Option<i64>,
-    #[serde(rename = "faceit_points_total", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "faceit_points_total",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub faceit_points_total: Option<i64>,
     #[serde(rename = "featured", default, skip_serializing_if = "Option::is_none")]
     pub featured: Option<bool>,
@@ -935,15 +1515,31 @@ pub struct ModelFaceitHubDetailed {
     pub game: Option<String>,
     #[serde(rename = "guid", default, skip_serializing_if = "Option::is_none")]
     pub guid: Option<String>,
-    #[serde(rename = "join_permissions", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "join_permissions",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub join_permissions: Option<String>,
-    #[serde(rename = "max_skill_level", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "max_skill_level",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub max_skill_level: Option<i64>,
-    #[serde(rename = "min_skill_level", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "min_skill_level",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub min_skill_level: Option<i64>,
     #[serde(rename = "name", default, skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
-    #[serde(rename = "organizer_guid", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "organizer_guid",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub organizer_guid: Option<String>,
     #[serde(rename = "owner", default, skip_serializing_if = "Option::is_none")]
     pub owner: Option<ModelFaceitHubOwner>,
@@ -951,19 +1547,35 @@ pub struct ModelFaceitHubDetailed {
     pub published: Option<bool>,
     #[serde(rename = "region", default, skip_serializing_if = "Option::is_none")]
     pub region: Option<String>,
-    #[serde(rename = "relationship_type", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "relationship_type",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub relationship_type: Option<String>,
     #[serde(rename = "roles", default, skip_serializing_if = "Option::is_none")]
     pub roles: Option<Vec<ModelFaceitHubRole>>,
-    #[serde(rename = "rules_guid", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "rules_guid",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub rules_guid: Option<String>,
-    #[serde(rename = "selection_settings", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "selection_settings",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub selection_settings: Option<ModelFaceitHubSelectionSettings>,
     #[serde(rename = "sensitive", default, skip_serializing_if = "Option::is_none")]
     pub sensitive: Option<bool>,
     #[serde(rename = "slots", default, skip_serializing_if = "Option::is_none")]
     pub slots: Option<i64>,
-    #[serde(rename = "supporter_badge_image", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "supporter_badge_image",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub supporter_badge_image: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -971,7 +1583,11 @@ pub struct ModelFaceitHubDetailed {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitHubMemberUser {
-    #[serde(rename = "avatar_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "avatar_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub avatar_url: Option<String>,
     #[serde(rename = "guid", default, skip_serializing_if = "Option::is_none")]
     pub guid: Option<String>,
@@ -983,13 +1599,29 @@ pub struct ModelFaceitHubMemberUser {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitHubMembership {
-    #[serde(rename = "competition", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "competition",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub competition: Option<ModelFaceitHubCompetition>,
-    #[serde(rename = "created_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "created_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub created_at: Option<String>,
-    #[serde(rename = "highest_role_ranking", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "highest_role_ranking",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub highest_role_ranking: Option<i64>,
-    #[serde(rename = "membership_id", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "membership_id",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub membership_id: Option<String>,
     #[serde(rename = "roles", default, skip_serializing_if = "Option::is_none")]
     pub roles: Option<Vec<String>>,
@@ -1005,7 +1637,11 @@ pub struct ModelFaceitHubMembershipsResponse {
     pub count: Option<i64>,
     #[serde(rename = "end", default, skip_serializing_if = "Option::is_none")]
     pub end: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "items", default, skip_serializing_if = "Option::is_none")]
     pub items: Option<Vec<ModelFaceitHubMembership>>,
@@ -1013,7 +1649,11 @@ pub struct ModelFaceitHubMembershipsResponse {
     pub limit: Option<i64>,
     #[serde(rename = "offset", default, skip_serializing_if = "Option::is_none")]
     pub offset: Option<i64>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(rename = "start", default, skip_serializing_if = "Option::is_none")]
     pub start: Option<i64>,
@@ -1023,7 +1663,11 @@ pub struct ModelFaceitHubMembershipsResponse {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitHubOwner {
-    #[serde(rename = "avatar_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "avatar_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub avatar_url: Option<String>,
     #[serde(rename = "guid", default, skip_serializing_if = "Option::is_none")]
     pub guid: Option<String>,
@@ -1037,11 +1681,19 @@ pub struct ModelFaceitHubOwner {
 pub struct ModelFaceitHubResponse {
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "hub", default, skip_serializing_if = "Option::is_none")]
     pub hub: Option<ModelFaceitHub>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -1081,7 +1733,11 @@ pub struct ModelFaceitHubSummary {
     pub child_ids: Option<Vec<String>>,
     #[serde(rename = "club", default, skip_serializing_if = "Option::is_none")]
     pub club: Option<bool>,
-    #[serde(rename = "current_players_joined", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "current_players_joined",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub current_players_joined: Option<i64>,
     #[serde(rename = "game", default, skip_serializing_if = "Option::is_none")]
     pub game: Option<String>,
@@ -1089,15 +1745,27 @@ pub struct ModelFaceitHubSummary {
     pub guid: Option<String>,
     #[serde(rename = "name", default, skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
-    #[serde(rename = "organizer_guid", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "organizer_guid",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub organizer_guid: Option<String>,
-    #[serde(rename = "organizer_tier", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "organizer_tier",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub organizer_tier: Option<i64>,
     #[serde(rename = "published", default, skip_serializing_if = "Option::is_none")]
     pub published: Option<bool>,
     #[serde(rename = "region", default, skip_serializing_if = "Option::is_none")]
     pub region: Option<String>,
-    #[serde(rename = "relationship_type", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "relationship_type",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub relationship_type: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -1107,11 +1775,19 @@ pub struct ModelFaceitHubSummary {
 pub struct ModelFaceitHubsDetailedResponse {
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "items", default, skip_serializing_if = "Option::is_none")]
     pub items: Option<Vec<ModelFaceitHubDetailed>>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -1121,11 +1797,19 @@ pub struct ModelFaceitHubsDetailedResponse {
 pub struct ModelFaceitHubsResponse {
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "items", default, skip_serializing_if = "Option::is_none")]
     pub items: Option<Vec<ModelFaceitHubSummary>>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -1133,25 +1817,53 @@ pub struct ModelFaceitHubsResponse {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitLeaderboard {
-    #[serde(rename = "bracket_placement", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "bracket_placement",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub bracket_placement: Option<i64>,
-    #[serde(rename = "bye_team_result_action", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "bye_team_result_action",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub bye_team_result_action: Option<String>,
-    #[serde(rename = "conclusion_criteria", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "conclusion_criteria",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub conclusion_criteria: Option<String>,
-    #[serde(rename = "country_restriction", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "country_restriction",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub country_restriction: Option<String>,
     #[serde(rename = "delimiter", default, skip_serializing_if = "Option::is_none")]
     pub delimiter: Option<i64>,
-    #[serde(rename = "drops_information", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "drops_information",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub drops_information: Option<serde_json::Value>,
     #[serde(rename = "end_date", default, skip_serializing_if = "Option::is_none")]
     pub end_date: Option<String>,
     #[serde(rename = "entity_id", default, skip_serializing_if = "Option::is_none")]
     pub entity_id: Option<String>,
-    #[serde(rename = "entity_type", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "entity_type",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub entity_type: Option<String>,
-    #[serde(rename = "ffa_points", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "ffa_points",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub ffa_points: Option<std::collections::BTreeMap<String, i64>>,
     #[serde(rename = "game", default, skip_serializing_if = "Option::is_none")]
     pub game: Option<String>,
@@ -1161,29 +1873,73 @@ pub struct ModelFaceitLeaderboard {
     pub hidden: Option<bool>,
     #[serde(rename = "id", default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
-    #[serde(rename = "leaderboard_mode", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "leaderboard_mode",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub leaderboard_mode: Option<String>,
-    #[serde(rename = "leaderboard_name", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "leaderboard_name",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub leaderboard_name: Option<String>,
-    #[serde(rename = "leaderboard_type", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "leaderboard_type",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub leaderboard_type: Option<String>,
-    #[serde(rename = "min_matches", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "min_matches",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub min_matches: Option<i64>,
-    #[serde(rename = "organizer_id", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "organizer_id",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub organizer_id: Option<String>,
-    #[serde(rename = "points_per_draw", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "points_per_draw",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub points_per_draw: Option<i64>,
-    #[serde(rename = "points_per_loss", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "points_per_loss",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub points_per_loss: Option<i64>,
-    #[serde(rename = "points_per_win", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "points_per_win",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub points_per_win: Option<i64>,
-    #[serde(rename = "points_type", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "points_type",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub points_type: Option<String>,
-    #[serde(rename = "prize_pool", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "prize_pool",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub prize_pool: Option<serde_json::Value>,
     #[serde(rename = "prizes", default, skip_serializing_if = "Option::is_none")]
     pub prizes: Option<serde_json::Value>,
-    #[serde(rename = "ranking_type", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "ranking_type",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub ranking_type: Option<String>,
     #[serde(rename = "region", default, skip_serializing_if = "Option::is_none")]
     pub region: Option<String>,
@@ -1195,13 +1951,25 @@ pub struct ModelFaceitLeaderboard {
     pub schedule: Option<String>,
     #[serde(rename = "season", default, skip_serializing_if = "Option::is_none")]
     pub season: Option<i64>,
-    #[serde(rename = "start_date", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "start_date",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub start_date: Option<String>,
-    #[serde(rename = "starting_points", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "starting_points",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub starting_points: Option<i64>,
     #[serde(rename = "status", default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
-    #[serde(rename = "technical_name", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "technical_name",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub technical_name: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -1209,21 +1977,49 @@ pub struct ModelFaceitLeaderboard {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitLeaderboardDetail {
-    #[serde(rename = "balanced_scoring", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "balanced_scoring",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub balanced_scoring: Option<serde_json::Value>,
-    #[serde(rename = "bracket_placement", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "bracket_placement",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub bracket_placement: Option<i64>,
-    #[serde(rename = "bye_team_result_action", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "bye_team_result_action",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub bye_team_result_action: Option<String>,
-    #[serde(rename = "conclusion_criteria", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "conclusion_criteria",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub conclusion_criteria: Option<String>,
-    #[serde(rename = "country_restriction", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "country_restriction",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub country_restriction: Option<String>,
-    #[serde(rename = "created_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "created_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub created_at: Option<String>,
     #[serde(rename = "delimiter", default, skip_serializing_if = "Option::is_none")]
     pub delimiter: Option<i64>,
-    #[serde(rename = "drops_information", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "drops_information",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub drops_information: Option<serde_json::Value>,
     #[serde(rename = "end_date", default, skip_serializing_if = "Option::is_none")]
     pub end_date: Option<String>,
@@ -1231,9 +2027,17 @@ pub struct ModelFaceitLeaderboardDetail {
     pub entities: Option<Vec<ModelFaceitLeaderboardEntityRef>>,
     #[serde(rename = "entity_id", default, skip_serializing_if = "Option::is_none")]
     pub entity_id: Option<String>,
-    #[serde(rename = "entity_type", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "entity_type",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub entity_type: Option<String>,
-    #[serde(rename = "ffa_points", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "ffa_points",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub ffa_points: Option<std::collections::BTreeMap<String, i64>>,
     #[serde(rename = "game", default, skip_serializing_if = "Option::is_none")]
     pub game: Option<String>,
@@ -1243,53 +2047,133 @@ pub struct ModelFaceitLeaderboardDetail {
     pub hidden: Option<bool>,
     #[serde(rename = "id", default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
-    #[serde(rename = "last_modified", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "last_modified",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub last_modified: Option<String>,
-    #[serde(rename = "leaderboard_mode", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "leaderboard_mode",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub leaderboard_mode: Option<String>,
-    #[serde(rename = "leaderboard_name", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "leaderboard_name",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub leaderboard_name: Option<String>,
-    #[serde(rename = "leaderboard_type", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "leaderboard_type",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub leaderboard_type: Option<String>,
-    #[serde(rename = "membership_requirement", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "membership_requirement",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub membership_requirement: Option<serde_json::Value>,
     #[serde(rename = "metadata", default, skip_serializing_if = "Option::is_none")]
     pub metadata: Option<serde_json::Value>,
-    #[serde(rename = "min_matches", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "min_matches",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub min_matches: Option<i64>,
-    #[serde(rename = "notify_points_updates", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "notify_points_updates",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub notify_points_updates: Option<bool>,
-    #[serde(rename = "organizer_id", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "organizer_id",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub organizer_id: Option<String>,
     #[serde(rename = "penalty", default, skip_serializing_if = "Option::is_none")]
     pub penalty: Option<serde_json::Value>,
-    #[serde(rename = "points_per", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "points_per",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub points_per: Option<serde_json::Value>,
-    #[serde(rename = "points_per_draw", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "points_per_draw",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub points_per_draw: Option<i64>,
-    #[serde(rename = "points_per_loss", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "points_per_loss",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub points_per_loss: Option<i64>,
-    #[serde(rename = "points_per_win", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "points_per_win",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub points_per_win: Option<i64>,
-    #[serde(rename = "points_type", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "points_type",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub points_type: Option<String>,
-    #[serde(rename = "prize_pool", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "prize_pool",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub prize_pool: Option<serde_json::Value>,
     #[serde(rename = "prizes", default, skip_serializing_if = "Option::is_none")]
     pub prizes: Option<serde_json::Value>,
-    #[serde(rename = "promotion_target", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "promotion_target",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub promotion_target: Option<serde_json::Value>,
-    #[serde(rename = "ranking_boost", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "ranking_boost",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub ranking_boost: Option<i64>,
-    #[serde(rename = "ranking_fields", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "ranking_fields",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub ranking_fields: Option<serde_json::Value>,
-    #[serde(rename = "ranking_type", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "ranking_type",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub ranking_type: Option<String>,
     #[serde(rename = "region", default, skip_serializing_if = "Option::is_none")]
     pub region: Option<String>,
-    #[serde(rename = "relegation_target", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "relegation_target",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub relegation_target: Option<serde_json::Value>,
-    #[serde(rename = "requirement", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "requirement",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub requirement: Option<serde_json::Value>,
     #[serde(rename = "round", default, skip_serializing_if = "Option::is_none")]
     pub round: Option<i64>,
@@ -1299,17 +2183,33 @@ pub struct ModelFaceitLeaderboardDetail {
     pub schedule: Option<String>,
     #[serde(rename = "season", default, skip_serializing_if = "Option::is_none")]
     pub season: Option<i64>,
-    #[serde(rename = "start_date", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "start_date",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub start_date: Option<String>,
-    #[serde(rename = "starting_points", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "starting_points",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub starting_points: Option<i64>,
     #[serde(rename = "status", default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
     #[serde(rename = "subtype", default, skip_serializing_if = "Option::is_none")]
     pub subtype: Option<serde_json::Value>,
-    #[serde(rename = "tag_requirement", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "tag_requirement",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub tag_requirement: Option<serde_json::Value>,
-    #[serde(rename = "technical_name", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "technical_name",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub technical_name: Option<String>,
     #[serde(rename = "version", default, skip_serializing_if = "Option::is_none")]
     pub version: Option<i64>,
@@ -1321,11 +2221,23 @@ pub struct ModelFaceitLeaderboardDetail {
 pub struct ModelFaceitLeaderboardDetailResponse {
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
-    #[serde(rename = "leaderboard", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "leaderboard",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub leaderboard: Option<ModelFaceitLeaderboardDetail>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -1347,7 +2259,11 @@ pub struct ModelFaceitLeaderboardResponse {
     pub count: Option<i64>,
     #[serde(rename = "entries", default, skip_serializing_if = "Option::is_none")]
     pub entries: Option<Vec<ModelFaceitRankingEntry>>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "game", default, skip_serializing_if = "Option::is_none")]
     pub game: Option<String>,
@@ -1359,9 +2275,17 @@ pub struct ModelFaceitLeaderboardResponse {
     pub region: Option<String>,
     #[serde(rename = "season", default, skip_serializing_if = "Option::is_none")]
     pub season: Option<i64>,
-    #[serde(rename = "season_history", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "season_history",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub season_history: Option<Vec<i64>>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -1371,17 +2295,33 @@ pub struct ModelFaceitLeaderboardResponse {
 pub struct ModelFaceitLeaderboardStatusesResponse {
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "entity_types", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "entity_types",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub entity_types: Option<Vec<String>>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(rename = "statuses", default, skip_serializing_if = "Option::is_none")]
     pub statuses: Option<Vec<String>>,
     #[serde(rename = "types", default, skip_serializing_if = "Option::is_none")]
     pub types: Option<Vec<String>>,
-    #[serde(rename = "verified_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "verified_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub verified_at: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -1391,13 +2331,21 @@ pub struct ModelFaceitLeaderboardStatusesResponse {
 pub struct ModelFaceitMapsResponse {
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "game", default, skip_serializing_if = "Option::is_none")]
     pub game: Option<String>,
     #[serde(rename = "maps", default, skip_serializing_if = "Option::is_none")]
     pub maps: Option<Vec<ModelFaceitGameMap>>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -1409,7 +2357,11 @@ pub struct ModelFaceitMatchClipsResponse {
     pub clips: Option<Vec<ModelFaceitClip>>,
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "has_more", default, skip_serializing_if = "Option::is_none")]
     pub has_more: Option<bool>,
@@ -1417,7 +2369,11 @@ pub struct ModelFaceitMatchClipsResponse {
     pub limit: Option<i64>,
     #[serde(rename = "offset", default, skip_serializing_if = "Option::is_none")]
     pub offset: Option<i64>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -1425,7 +2381,11 @@ pub struct ModelFaceitMatchClipsResponse {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitOrganizer {
-    #[serde(rename = "admin_list_public", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "admin_list_public",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub admin_list_public: Option<bool>,
     #[serde(rename = "admins", default, skip_serializing_if = "Option::is_none")]
     pub admins: Option<Vec<ModelFaceitOrganizerAdmin>>,
@@ -1435,9 +2395,17 @@ pub struct ModelFaceitOrganizer {
     pub countries: Option<Vec<String>>,
     #[serde(rename = "cover", default, skip_serializing_if = "Option::is_none")]
     pub cover: Option<String>,
-    #[serde(rename = "description", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "description",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub description: Option<String>,
-    #[serde(rename = "donations_enabled", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "donations_enabled",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub donations_enabled: Option<bool>,
     #[serde(rename = "facebook", default, skip_serializing_if = "Option::is_none")]
     pub facebook: Option<String>,
@@ -1445,17 +2413,33 @@ pub struct ModelFaceitOrganizer {
     pub featured: Option<bool>,
     #[serde(rename = "features", default, skip_serializing_if = "Option::is_none")]
     pub features: Option<Vec<String>>,
-    #[serde(rename = "featuring_countries", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "featuring_countries",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub featuring_countries: Option<Vec<String>>,
-    #[serde(rename = "freemium_hub_enabled", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "freemium_hub_enabled",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub freemium_hub_enabled: Option<bool>,
     #[serde(rename = "games", default, skip_serializing_if = "Option::is_none")]
     pub games: Option<Vec<String>>,
-    #[serde(rename = "geo_regions", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "geo_regions",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub geo_regions: Option<Vec<String>>,
     #[serde(rename = "guid", default, skip_serializing_if = "Option::is_none")]
     pub guid: Option<String>,
-    #[serde(rename = "live_streaming_enabled", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "live_streaming_enabled",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub live_streaming_enabled: Option<bool>,
     #[serde(rename = "name", default, skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
@@ -1479,7 +2463,11 @@ pub struct ModelFaceitOrganizer {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitOrganizerAdmin {
-    #[serde(rename = "avatar_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "avatar_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub avatar_url: Option<String>,
     #[serde(rename = "nickname", default, skip_serializing_if = "Option::is_none")]
     pub nickname: Option<String>,
@@ -1493,11 +2481,19 @@ pub struct ModelFaceitOrganizerAdmin {
 pub struct ModelFaceitOrganizerResponse {
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "organizer", default, skip_serializing_if = "Option::is_none")]
     pub organizer: Option<ModelFaceitOrganizer>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -1521,23 +2517,51 @@ pub struct ModelFaceitOrganizerSponsor {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitOrganizerTier {
-    #[serde(rename = "allowed_concurrent_competitions", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "allowed_concurrent_competitions",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub allowed_concurrent_competitions: Option<i64>,
-    #[serde(rename = "allowed_concurrent_hubs", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "allowed_concurrent_hubs",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub allowed_concurrent_hubs: Option<i64>,
-    #[serde(rename = "custom_prizes_enabled", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "custom_prizes_enabled",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub custom_prizes_enabled: Option<bool>,
-    #[serde(rename = "faceit_points_prizes_enabled", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "faceit_points_prizes_enabled",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub faceit_points_prizes_enabled: Option<bool>,
     #[serde(rename = "level", default, skip_serializing_if = "Option::is_none")]
     pub level: Option<i64>,
-    #[serde(rename = "max_competition_slots", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "max_competition_slots",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub max_competition_slots: Option<i64>,
     #[serde(rename = "max_rules", default, skip_serializing_if = "Option::is_none")]
     pub max_rules: Option<i64>,
-    #[serde(rename = "min_competition_slots", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "min_competition_slots",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub min_competition_slots: Option<i64>,
-    #[serde(rename = "prize_money_settings_enabled", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "prize_money_settings_enabled",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub prize_money_settings_enabled: Option<bool>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -1545,17 +2569,33 @@ pub struct ModelFaceitOrganizerTier {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitPlayer {
-    #[serde(rename = "activated_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "activated_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub activated_at: Option<String>,
-    #[serde(rename = "active_team_id", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "active_team_id",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub active_team_id: Option<String>,
     #[serde(rename = "avatar", default, skip_serializing_if = "Option::is_none")]
     pub avatar: Option<String>,
     #[serde(rename = "country", default, skip_serializing_if = "Option::is_none")]
     pub country: Option<String>,
-    #[serde(rename = "cover_image_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "cover_image_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub cover_image_url: Option<String>,
-    #[serde(rename = "created_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "created_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub created_at: Option<String>,
     #[serde(rename = "flag", default, skip_serializing_if = "Option::is_none")]
     pub flag: Option<String>,
@@ -1563,15 +2603,31 @@ pub struct ModelFaceitPlayer {
     pub games: Option<std::collections::BTreeMap<String, ModelFaceitPlayerGame>>,
     #[serde(rename = "id", default, skip_serializing_if = "Option::is_none")]
     pub id: Option<String>,
-    #[serde(rename = "matching_sound", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "matching_sound",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub matching_sound: Option<String>,
-    #[serde(rename = "memberships", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "memberships",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub memberships: Option<Vec<String>>,
     #[serde(rename = "nickname", default, skip_serializing_if = "Option::is_none")]
     pub nickname: Option<String>,
-    #[serde(rename = "registration_status", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "registration_status",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub registration_status: Option<String>,
-    #[serde(rename = "registration_status_v2", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "registration_status_v2",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub registration_status_v2: Option<String>,
     #[serde(rename = "tags", default, skip_serializing_if = "Option::is_none")]
     pub tags: Option<Vec<String>>,
@@ -1587,9 +2643,17 @@ pub struct ModelFaceitPlayer {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitPlayerGame {
-    #[serde(rename = "elo_refreshed_by_user_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "elo_refreshed_by_user_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub elo_refreshed_by_user_at: Option<String>,
-    #[serde(rename = "faceit_elo", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "faceit_elo",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub faceit_elo: Option<i64>,
     #[serde(rename = "game_id", default, skip_serializing_if = "Option::is_none")]
     pub game_id: Option<String>,
@@ -1597,13 +2661,29 @@ pub struct ModelFaceitPlayerGame {
     pub game_name: Option<String>,
     #[serde(rename = "region", default, skip_serializing_if = "Option::is_none")]
     pub region: Option<String>,
-    #[serde(rename = "region_updated_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "region_updated_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub region_updated_at: Option<String>,
-    #[serde(rename = "region_updated_at_v2", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "region_updated_at_v2",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub region_updated_at_v2: Option<String>,
-    #[serde(rename = "skill_level", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "skill_level",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub skill_level: Option<i64>,
-    #[serde(rename = "skill_level_label", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "skill_level_label",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub skill_level_label: Option<String>,
     #[serde(rename = "tags", default, skip_serializing_if = "Option::is_none")]
     pub tags: Option<Vec<String>>,
@@ -1615,7 +2695,11 @@ pub struct ModelFaceitPlayerGame {
 pub struct ModelFaceitPlayerRankResponse {
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "game", default, skip_serializing_if = "Option::is_none")]
     pub game: Option<String>,
@@ -1625,9 +2709,17 @@ pub struct ModelFaceitPlayerRankResponse {
     pub region: Option<String>,
     #[serde(rename = "season", default, skip_serializing_if = "Option::is_none")]
     pub season: Option<i64>,
-    #[serde(rename = "season_history", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "season_history",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub season_history: Option<Vec<i64>>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(rename = "user_id", default, skip_serializing_if = "Option::is_none")]
     pub user_id: Option<String>,
@@ -1639,11 +2731,19 @@ pub struct ModelFaceitPlayerRankResponse {
 pub struct ModelFaceitPlayerResponse {
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "player", default, skip_serializing_if = "Option::is_none")]
     pub player: Option<ModelFaceitPlayer>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -1653,15 +2753,27 @@ pub struct ModelFaceitPlayerResponse {
 pub struct ModelFaceitRankingEntry {
     #[serde(rename = "elo", default, skip_serializing_if = "Option::is_none")]
     pub elo: Option<i64>,
-    #[serde(rename = "global_position", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "global_position",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub global_position: Option<i64>,
     #[serde(rename = "position", default, skip_serializing_if = "Option::is_none")]
     pub position: Option<i64>,
-    #[serde(rename = "skill_level", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "skill_level",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub skill_level: Option<i64>,
     #[serde(rename = "user", default, skip_serializing_if = "Option::is_none")]
     pub user: Option<ModelFaceitRankingUser>,
-    #[serde(rename = "verification_level", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "verification_level",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub verification_level: Option<i64>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -1697,13 +2809,25 @@ pub struct ModelFaceitRegionsResponse {
     pub closed: Option<bool>,
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "regions", default, skip_serializing_if = "Option::is_none")]
     pub regions: Option<Vec<ModelFaceitRegion>>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
-    #[serde(rename = "verified_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "verified_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub verified_at: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -1713,7 +2837,11 @@ pub struct ModelFaceitRegionsResponse {
 pub struct ModelFaceitRule {
     #[serde(rename = "body", default, skip_serializing_if = "Option::is_none")]
     pub body: Option<String>,
-    #[serde(rename = "created_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "created_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub created_at: Option<String>,
     #[serde(rename = "game", default, skip_serializing_if = "Option::is_none")]
     pub game: Option<String>,
@@ -1723,7 +2851,11 @@ pub struct ModelFaceitRule {
     pub name: Option<String>,
     #[serde(rename = "organizer", default, skip_serializing_if = "Option::is_none")]
     pub organizer: Option<String>,
-    #[serde(rename = "updated_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "updated_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub updated_at: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -1733,11 +2865,19 @@ pub struct ModelFaceitRule {
 pub struct ModelFaceitRuleResponse {
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "rule", default, skip_serializing_if = "Option::is_none")]
     pub rule: Option<ModelFaceitRule>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -1747,7 +2887,11 @@ pub struct ModelFaceitRuleResponse {
 pub struct ModelFaceitRulesResponse {
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "limit", default, skip_serializing_if = "Option::is_none")]
     pub limit: Option<i64>,
@@ -1755,7 +2899,11 @@ pub struct ModelFaceitRulesResponse {
     pub offset: Option<i64>,
     #[serde(rename = "rules", default, skip_serializing_if = "Option::is_none")]
     pub rules: Option<Vec<ModelFaceitRule>>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -1767,7 +2915,11 @@ pub struct ModelFaceitSkillLevel {
     pub max: Option<i64>,
     #[serde(rename = "min", default, skip_serializing_if = "Option::is_none")]
     pub min: Option<i64>,
-    #[serde(rename = "skill_level", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "skill_level",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub skill_level: Option<i64>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -1777,13 +2929,21 @@ pub struct ModelFaceitSkillLevel {
 pub struct ModelFaceitSkillLevelsResponse {
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "game", default, skip_serializing_if = "Option::is_none")]
     pub game: Option<String>,
     #[serde(rename = "levels", default, skip_serializing_if = "Option::is_none")]
     pub levels: Option<Vec<ModelFaceitSkillLevel>>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -1791,7 +2951,11 @@ pub struct ModelFaceitSkillLevelsResponse {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitStandingsEntry {
-    #[serde(rename = "leaderboard", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "leaderboard",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub leaderboard: Option<ModelFaceitStandingsLeaderboard>,
     #[serde(rename = "rankings", default, skip_serializing_if = "Option::is_none")]
     pub rankings: Option<Vec<ModelFaceitStandingsRanking>>,
@@ -1801,13 +2965,21 @@ pub struct ModelFaceitStandingsEntry {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitStandingsLeaderboard {
-    #[serde(rename = "bracket_placement", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "bracket_placement",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub bracket_placement: Option<i64>,
     #[serde(rename = "delimiter", default, skip_serializing_if = "Option::is_none")]
     pub delimiter: Option<i64>,
     #[serde(rename = "entity_id", default, skip_serializing_if = "Option::is_none")]
     pub entity_id: Option<String>,
-    #[serde(rename = "entity_type", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "entity_type",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub entity_type: Option<String>,
     #[serde(rename = "group", default, skip_serializing_if = "Option::is_none")]
     pub group: Option<i64>,
@@ -1821,25 +2993,61 @@ pub struct ModelFaceitStandingsLeaderboard {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitStandingsPlacement {
-    #[serde(rename = "entity_avatar", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "entity_avatar",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub entity_avatar: Option<String>,
-    #[serde(rename = "entity_country", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "entity_country",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub entity_country: Option<String>,
     #[serde(rename = "entity_id", default, skip_serializing_if = "Option::is_none")]
     pub entity_id: Option<String>,
-    #[serde(rename = "entity_memberships", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "entity_memberships",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub entity_memberships: Option<Vec<String>>,
-    #[serde(rename = "entity_name", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "entity_name",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub entity_name: Option<String>,
-    #[serde(rename = "entity_skill_level", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "entity_skill_level",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub entity_skill_level: Option<i64>,
-    #[serde(rename = "entity_verified", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "entity_verified",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub entity_verified: Option<bool>,
-    #[serde(rename = "entity_verified_level", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "entity_verified_level",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub entity_verified_level: Option<String>,
-    #[serde(rename = "roster_ids", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "roster_ids",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub roster_ids: Option<Vec<String>>,
-    #[serde(rename = "roster_memberships", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "roster_memberships",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub roster_memberships: Option<Vec<String>>,
     #[serde(rename = "type", default, skip_serializing_if = "Option::is_none")]
     pub type_: Option<String>,
@@ -1867,13 +3075,21 @@ pub struct ModelFaceitStandingsResponse {
     pub count: Option<i64>,
     #[serde(rename = "entries", default, skip_serializing_if = "Option::is_none")]
     pub entries: Option<Vec<ModelFaceitStandingsEntry>>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "group", default, skip_serializing_if = "Option::is_none")]
     pub group: Option<i64>,
     #[serde(rename = "round", default, skip_serializing_if = "Option::is_none")]
     pub round: Option<String>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -1887,11 +3103,23 @@ pub struct ModelFaceitTeam {
     pub country: Option<String>,
     #[serde(rename = "cover", default, skip_serializing_if = "Option::is_none")]
     pub cover: Option<String>,
-    #[serde(rename = "created_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "created_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub created_at: Option<String>,
-    #[serde(rename = "description", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "description",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub description: Option<String>,
-    #[serde(rename = "entity_type", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "entity_type",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub entity_type: Option<String>,
     #[serde(rename = "facebook", default, skip_serializing_if = "Option::is_none")]
     pub facebook: Option<String>,
@@ -1903,13 +3131,21 @@ pub struct ModelFaceitTeam {
     pub leader: Option<String>,
     #[serde(rename = "members", default, skip_serializing_if = "Option::is_none")]
     pub members: Option<Vec<ModelFaceitTeamMember>>,
-    #[serde(rename = "members_ids", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "members_ids",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub members_ids: Option<Vec<String>>,
     #[serde(rename = "name", default, skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
     #[serde(rename = "nickname", default, skip_serializing_if = "Option::is_none")]
     pub nickname: Option<String>,
-    #[serde(rename = "pending_members_ids", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "pending_members_ids",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub pending_members_ids: Option<Vec<String>>,
     #[serde(rename = "status", default, skip_serializing_if = "Option::is_none")]
     pub status: Option<String>,
@@ -1917,7 +3153,11 @@ pub struct ModelFaceitTeam {
     pub team_type: Option<String>,
     #[serde(rename = "twitter", default, skip_serializing_if = "Option::is_none")]
     pub twitter: Option<String>,
-    #[serde(rename = "updated_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "updated_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub updated_at: Option<String>,
     #[serde(rename = "website", default, skip_serializing_if = "Option::is_none")]
     pub website: Option<String>,
@@ -1947,9 +3187,17 @@ pub struct ModelFaceitTeamMember {
 pub struct ModelFaceitTeamResponse {
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(rename = "team", default, skip_serializing_if = "Option::is_none")]
     pub team: Option<ModelFaceitTeam>,
@@ -1961,7 +3209,11 @@ pub struct ModelFaceitTeamResponse {
 pub struct ModelFaceitTournamentsPastResponse {
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "limit", default, skip_serializing_if = "Option::is_none")]
     pub limit: Option<i64>,
@@ -1971,9 +3223,17 @@ pub struct ModelFaceitTournamentsPastResponse {
     pub result: Option<String>,
     #[serde(rename = "size", default, skip_serializing_if = "Option::is_none")]
     pub size: Option<i64>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
-    #[serde(rename = "tournaments", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "tournaments",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub tournaments: Option<Vec<serde_json::Value>>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
@@ -1981,11 +3241,23 @@ pub struct ModelFaceitTournamentsPastResponse {
 
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct ModelFaceitUserSkill {
-    #[serde(rename = "expiration", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "expiration",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub expiration: Option<String>,
-    #[serde(rename = "game_skill", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "game_skill",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub game_skill: Option<ModelFaceitGameSkill>,
-    #[serde(rename = "is_professional_player", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "is_professional_player",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub is_professional_player: Option<bool>,
     #[serde(rename = "user_id", default, skip_serializing_if = "Option::is_none")]
     pub user_id: Option<String>,
@@ -1997,13 +3269,21 @@ pub struct ModelFaceitUserSkill {
 pub struct ModelFaceitUserSkillsResponse {
     #[serde(rename = "count", default, skip_serializing_if = "Option::is_none")]
     pub count: Option<i64>,
-    #[serde(rename = "fetched_at", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "fetched_at",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub fetched_at: Option<String>,
     #[serde(rename = "game", default, skip_serializing_if = "Option::is_none")]
     pub game: Option<String>,
     #[serde(rename = "skills", default, skip_serializing_if = "Option::is_none")]
     pub skills: Option<Vec<ModelFaceitUserSkill>>,
-    #[serde(rename = "source_url", default, skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "source_url",
+        default,
+        skip_serializing_if = "Option::is_none"
+    )]
     pub source_url: Option<String>,
     #[serde(flatten)]
     pub additional: BTreeMap<String, Value>,
